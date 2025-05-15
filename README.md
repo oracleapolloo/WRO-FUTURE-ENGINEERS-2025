@@ -120,6 +120,20 @@ The robot is powered using **three 18650 lithium-ion batteries** connected in se
 
 This setup provides enough voltage and current to power all modules simultaneously without voltage drops or overheating issues.
 
+### 🧠 Arduino Uno (ATmega328P)
+
+The Arduino Uno is the main microcontroller board used in our robot for processing sensor inputs and controlling all outputs like motors and servos. It features an ATmega328P chip, 14 digital I/O pins (6 PWM-enabled), 6 analog inputs, and USB support for programming.
+
+We selected the Uno for its ease of use, wide compatibility with modules like the L298N, HuskyLens, MPU6050, and ultrasonic sensors, and strong community support. It serves as the brain of our system — interpreting sensor data, executing control algorithms, and coordinating all movement and decision logic.
+
+Key reasons we chose the Arduino Uno:
+- **Compatibility** with all components used (e.g., HC-SR04, MPU6050, HuskyLens)
+- **Stable power management** via Vin (accepts 9–12V from battery pack)
+- **Real-time performance** suitable for obstacle avoidance and PID correction
+- **Robust support for C++ and open-source libraries**
+
+The Uno is powered from the 11.1V battery pack via the **Vin pin**, and shares a **common ground** with all sensors and drivers to maintain consistent signal reference.
+
 ---
 
 ## 💻 Software & Libraries
