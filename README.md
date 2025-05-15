@@ -54,7 +54,7 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 
 # 🔧 Hardware Used
 
----
+
 
 ## Ultrasonic Sensors (HC-SR04)
 
@@ -64,7 +64,7 @@ These sensors form the robot’s "eyes" for obstacle detection. The front sensor
 
 In our algorithm, distance values are constantly compared against a threshold. If the front sensor detects an obstacle within that range, the robot halts and evaluates side distances to decide which direction is safer to turn. It's also used to determine whether to move clockwise or anticlockwise direction for the game.
 
----
+
 
 ## 🔄 MG90s Servo Motor (180 Degrees)
 
@@ -74,7 +74,7 @@ Servo motors are ideal for precise angular control, which makes them perfect for
 
 The robot uses this motor for direction adjustments. Whenever the algorithm decides to turn, a command is sent to rotate the servo to a specific angle, and then it returns to center after the turn is completed.
 
----
+
 
 ## ⚙️ LEGO EV3 Medium Servo Motor (45503)
 
@@ -84,7 +84,7 @@ This motor was chosen for its precise speed control and compatibility with our g
 
 The forward movement is controlled via PWM signals, and we modulate these signals based on sensor input to slow down, stop, or accelerate the robot depending on the situation.
 
----
+
 
 ## ⚡ L298N Motor Driver
 
@@ -94,7 +94,7 @@ We used the L298N to control the two EV3 motors powering the robot’s movement.
 
 This driver takes PWM from the Arduino and outputs amplified signals to the motors. This setup gives us full control of the robot's motion dynamics.
 
----
+
 
 ## 📐 GY-521 (MPU6050) – Accelerometer and Gyroscope
 
@@ -104,7 +104,7 @@ We used the MPU6050 for real-time correction when the robot deviates from its pa
 
 By implementing a PID control algorithm, we used the gyro's yaw values to compare current vs. desired heading. The output of the PID was used to adjust motor speeds, ensuring the robot moved straight even on imperfect surfaces or after making a turn.
 
----
+
 
 ## 🔋 Power Supply
 
@@ -138,98 +138,35 @@ This configuration provides a reliable, rechargeable power source that is compac
 - Arduino IDE
 - HuskyLens firmware & software
 
-### Libraries:
+### getFilteredDistance():
+#### Reliable Sensor Reading
 ```cpp
-#include <Wire.h>
-#include <Servo.h>
-#include <MPU6050_light.h>
-
-// MPU and motor setup
-MPU6050 mpu(Wire);
-unsigned long timer = 0;
-
-const int MOTOR_ENB = 10;
-const int SERVO_PIN = 9;
-
-Servo steeringServo;
-
-// Ultrasonic sensor pins
-const int TRIG_LEFT = 2;
-const int ECHO_LEFT = 3;
-const int TRIG_RIGHT = 4;
-const int ECHO_RIGHT = 5;
-const int TRIG_FRONT = 6;
-const int ECHO_FRONT = 7;
-
-// Constants
-const float MAX_DISTANCE = 300.0;
-const float SIDE_TURN_DISTANCE = 90.0;
-const float TARGET_WALL_DISTANCE = 35.0;
-const float OUTER_WALL_THRESHOLD = 20.0;
-const int TOTAL_EDGES = 13;
-const int WAIT_DURATION = 1000;
-
-const int SERVO_CENTER = 90;
-const int SERVO_MAX_LEFT = 60;
-const int SERVO_MAX_RIGHT = 120;
-
-const int FORWARD_SPEED = 120;
-const int SLOW_SPEED = 90;
-
-// PID Gains
-const float KP = 1.5;
-const float KW = 0.8;
-const float KO = 0.5;
-
-// State variables
-bool directionSet = false;
-bool isClockwise = true;
-int edgeCount = 0;
-float targetAngle = 0;
-bool isWaiting = false;
-unsigned long waitStartTime = 0;
-bool isRunning = true;
-
-void setup() {
-  Serial.begin(9600);
-
-  // Servo and motor setup
-  steeringServo.attach(SERVO_PIN);
-  pinMode(MOTOR_ENB, OUTPUT);
-
-  // Sensor pins
-  pinMode(TRIG_LEFT, OUTPUT);
-  pinMode(ECHO_LEFT, INPUT);
-  pinMode(TRIG_RIGHT, OUTPUT);
-  pinMode(ECHO_RIGHT, INPUT);
-  pinMode(TRIG_FRONT, OUTPUT);
-  pinMode(ECHO_FRONT, INPUT);
-
-  Wire.begin();
-  mpu.begin();
-  mpu.calcGyroOffsets(true);
-
-  analogWrite(MOTOR_ENB, FORWARD_SPEED);
-  steeringServo.write(SERVO_CENTER);
+float getFilteredDistance(NewPing &sonar) {
+  const int samples = 3; // Sample count
+  float sum = 0;
+  for (int i = 0; i < samples; i++) {
+    float dist = sonar.ping_cm();
+    if (dist == 0) dist = MAX_DISTANCE; // Handle no response
+    sum += dist;
+    delay(5); // Allow sensor to settle
+  }
+  return sum / samples;
 }
+```
+>	•	Purpose: Averages multiple ultrasonic readings to reduce noise.<br>
+> •	Impact: Provides stable and trustworthy data used in wall-following and edge-detection decisions.<br>
+> •	Why filter? Ultrasonic sensors are prone to false or noisy readings. Using 3 samples reduces random fluctuations.
 
-float getDistance(int trigPin, int echoPin) {
-  digitalWrite(trigPin, LOW); delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH); delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-  long duration = pulseIn(echoPin, HIGH, 25000);
-  float distance = duration * 0.034 / 2;
-  return (distance == 0 || distance > MAX_DISTANCE) ? MAX_DISTANCE : distance;
-}
-
+### performTurn():
+#### Precision Turns Using Gyroscope
+```cpp
 void performTurn(bool clockwise) {
   mpu.update();
   float startAngle = mpu.getAngleZ();
-  float turnTarget = startAngle + (clockwise ? -88 : 88);
-
-  analogWrite(MOTOR_ENB, 0); // Stop before turn
+  float turnTarget = startAngle + (clockwise ? -88 : 88); // Turn ±88 degrees
+  analogWrite(MOTOR_ENB, 0);
   steeringServo.write(clockwise ? SERVO_MAX_RIGHT : SERVO_MAX_LEFT);
-  
+
   while (abs(mpu.getAngleZ() - turnTarget) > 2) {
     mpu.update();
     analogWrite(MOTOR_ENB, SLOW_SPEED);
@@ -239,83 +176,79 @@ void performTurn(bool clockwise) {
   steeringServo.write(SERVO_CENTER);
   targetAngle = turnTarget;
 }
+```
+>	•	Purpose: Turns the vehicle accurately by ~90°.
+> •	Decision Factor: Chooses turn direction based on wall distances and uses MPU6050 to measure turn angle.
+> •	Precision Control: Ensures consistent turns even after multiple laps (essential for edge counting).
 
-void loop() {
-  if (!isRunning) return;
+### Main Control Logic:
+#### loop() Core Navigation & Correction
+```cpp
+float gyroError = targetAngle - currentAngle;
+int servoAngle = SERVO_CENTER;
+if (directionSet && !isWaiting) {
+  float innerDist = isClockwise ? leftDist : rightDist;
+  float outerDist = isClockwise ? rightDist : leftDist;
+  float wallError = TARGET_WALL_DISTANCE - innerDist;
+  float outerError = outerDist < OUTER_WALL_THRESHOLD ? OUTER_WALL_THRESHOLD - outerDist : 0;
+  
+  servoAngle += (int)(KP * gyroError + KW * wallError + KO * outerError);
+} else {
+  servoAngle += (int)(KP * gyroError);
+}
+servoAngle = constrain(servoAngle, 60, 120);
+steeringServo.write(servoAngle);
+```
+> • Multifactor Decision: Blends three correction mechanisms:<br>
+>> &nbsp;&nbsp;&nbsp;&nbsp;1. Gyro (MPU) to correct angular drift.<br>
+>> &nbsp;&nbsp;&nbsp;&nbsp;2. Inner Wall distance to maintain center path.<br>
+>> &nbsp;&nbsp;&nbsp;&nbsp;3. Outer Wall avoidance when too close to obstacles.<br>
 
-  mpu.update();
-  float currentAngle = mpu.getAngleZ();
+> • Dynamic Steering: Adjusts the servo in real-time using a weighted formula.<br>
+> • Smart Navigation: Enables adaptive behavior depending on lap direction (`isClockwise`) and surrounding environment.
 
-  float leftDist = getDistance(TRIG_LEFT, ECHO_LEFT);
-  float rightDist = getDistance(TRIG_RIGHT, ECHO_RIGHT);
-  float frontDist = getDistance(TRIG_FRONT, ECHO_FRONT);
-
-  if (!directionSet) {
-    if (rightDist > SIDE_TURN_DISTANCE && rightDist < MAX_DISTANCE) {
-      isClockwise = true;
-      directionSet = true;
-      Serial.print("First corner: Clockwise, Edge=");
-      Serial.println(edgeCount);
-      edgeCount++;
-      performTurn(isClockwise);
-      isWaiting = true;
-      waitStartTime = millis();
-    } else if (leftDist > SIDE_TURN_DISTANCE && leftDist < MAX_DISTANCE) {
-      isClockwise = false;
-      directionSet = true;
-      Serial.print("First corner: Anticlockwise, Edge=");
-      Serial.println(edgeCount);
-      edgeCount++;
-      performTurn(isClockwise);
-      isWaiting = true;
-      waitStartTime = millis();
-    }
-  }
-
-  if (directionSet) {
-    if (isWaiting && millis() - waitStartTime >= WAIT_DURATION) {
-      isWaiting = false;
-    }
-
-    float outerDist = isClockwise ? rightDist : leftDist;
-
-    if (!isWaiting && outerDist > SIDE_TURN_DISTANCE && outerDist < MAX_DISTANCE) {
-      edgeCount++;
-      Serial.print("Edge detected: Count=");
-      Serial.println(edgeCount);
-
-      if (edgeCount >= TOTAL_EDGES) {
-        Serial.println("Finished 3 laps! Performing final maneuver...");
-        performTurn(isClockwise);
-        delay(1000); // Short final run
-        analogWrite(MOTOR_ENB, 0);
-        isRunning = false;
-        while (1); // Freeze
-      }
-
-      performTurn(isClockwise);
-      isWaiting = true;
-      waitStartTime = millis();
-    }
-
-    // WALL FOLLOWING + GYRO CORRECTION
-    float gyroError = targetAngle - currentAngle;
-    int servoAngle = SERVO_CENTER;
-
-    if (!isWaiting) {
-      float innerDist = isClockwise ? leftDist : rightDist;
-      float outerDist = isClockwise ? rightDist : leftDist;
-
-      float wallError = TARGET_WALL_DISTANCE - innerDist;
-      float outerError = outerDist < OUTER_WALL_THRESHOLD ? OUTER_WALL_THRESHOLD - outerDist : 0;
-
-      servoAngle += (int)(KP * gyroError + KW * wallError + KO * outerError);
-    } else {
-      servoAngle += (int)(KP * gyroError);
-    }
-
-    servoAngle = constrain(servoAngle, SERVO_MAX_LEFT, SERVO_MAX_RIGHT);
-    steeringServo.write(servoAngle);
-    analogWrite(MOTOR_ENB, FORWARD_SPEED);
+### Turn Initiation Based on Sensor Input:
+```cpp
+if (!directionSet) {
+  if (rightDist > SIDE_TURN_DISTANCE && rightDist < MAX_DISTANCE) {
+    isClockwise = true;
+    directionSet = true;
+    edgeCount++;
+    performTurn(isClockwise);
+    isWaiting = true;
+    waitStartTime = millis();
+  } else if (leftDist > SIDE_TURN_DISTANCE && leftDist < MAX_DISTANCE) {
+    isClockwise = false;
+    directionSet = true;
+    edgeCount++;
+    performTurn(isClockwise);
+    isWaiting = true;
+    waitStartTime = millis();
   }
 }
+```
+> •	Decision Maker: This is where the robot decides its lap direction based on which side wall disappears first.<br>
+> •	Sets Behavior: Once set, isClockwise changes all future logic.<br>
+> •	Edge Detection: First increment of edgeCount, starting lap tracking.
+
+### Edge Detection & Lap Completion:
+```cpp
+float outerDist = isClockwise ? rightDist : leftDist;
+if (outerDist > SIDE_TURN_DISTANCE && outerDist < MAX_DISTANCE) {
+  edgeCount++;
+  if (edgeCount >= TOTAL_EDGES) {
+    performTurn(isClockwise); // Final turn
+    delay(1000); // Move forward
+    analogWrite(MOTOR_ENB, 0); // Stop
+    isRunning = false;
+    while (1); // Halt forever
+  }
+  performTurn(isClockwise);
+  isWaiting = true;
+  waitStartTime = millis();
+}
+```
+>	•	Edge Counting: Core mechanism to track progress across laps and corners.<br>
+> •	Laps Tracking: Uses a fixed TOTAL_EDGES = 13 to know when to stop.<br>
+> •	Autonomous Exit: Robot completes a routine and safely stops.
+---
