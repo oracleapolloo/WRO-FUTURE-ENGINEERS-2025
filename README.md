@@ -85,6 +85,20 @@ We used the L298N to control the two EV3 motors powering the robot’s movement.
 
 This driver takes PWM from the Arduino and outputs amplified signals to the motors. This setup gives us full control of the robot's motion dynamics.
 
+### 🧠 Arduino Uno (ATmega328P)
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/Arduino%20UNO.jpeg" width="420"/>
+The Arduino Uno is the main microcontroller board used in our robot for processing sensor inputs and controlling all outputs like motors and servos. It features an ATmega328P chip, 14 digital I/O pins (6 PWM-enabled), 6 analog inputs, and USB support for programming.
+
+We selected the Uno for its ease of use, wide compatibility with modules like the L298N, HuskyLens, MPU6050, and ultrasonic sensors, and strong community support. It serves as the brain of our system — interpreting sensor data, executing control algorithms, and coordinating all movement and decision logic.
+
+Key reasons we chose the Arduino Uno:
+- **Compatibility** with all components used (e.g., HC-SR04, MPU6050, HuskyLens)
+- **Stable power management** via Vin (accepts 9–12V from battery pack)
+- **Real-time performance** suitable for obstacle avoidance and PID correction
+- **Robust support for C++ and open-source libraries**
+
+The Uno is powered from the 11.1V battery pack via the **Vin pin**, and shares a **common ground** with all sensors and drivers to maintain consistent signal reference.
+
 ### 📐 GY-521 (MPU6050) – Accelerometer and Gyroscope
 
 The GY-521 module is based on the MPU6050 chip and integrates a 3-axis accelerometer and a 3-axis gyroscope. It provides orientation, tilt, and motion data in real time. In this project, it was critical for maintaining a straight path and enabling accurate turns.
@@ -100,6 +114,8 @@ HuskyLens is an easy-to-use AI vision sensor capable of object detection, face r
 In our setup, HuskyLens is used primarily for detecting objects and line-following in specific challenge conditions. Its built-in machine learning support allowed us to train it for object shapes relevant to the field without needing external computing.
 
 HuskyLens communicates with the Arduino using UART, and we tuned it to provide real-time visual feedback that influences the robot's high-level decision-making.
+
+
 
 ### 🧱 Custom 3D Printed Chassis
 
@@ -119,19 +135,6 @@ The robot is powered using **three 18650 lithium-ion batteries** connected in se
 
 This setup provides enough voltage and current to power all modules simultaneously without voltage drops or overheating issues.
 
-### 🧠 Arduino Uno (ATmega328P)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/Arduino%20UNO.jpeg" width="420"/>
-The Arduino Uno is the main microcontroller board used in our robot for processing sensor inputs and controlling all outputs like motors and servos. It features an ATmega328P chip, 14 digital I/O pins (6 PWM-enabled), 6 analog inputs, and USB support for programming.
-
-We selected the Uno for its ease of use, wide compatibility with modules like the L298N, HuskyLens, MPU6050, and ultrasonic sensors, and strong community support. It serves as the brain of our system — interpreting sensor data, executing control algorithms, and coordinating all movement and decision logic.
-
-Key reasons we chose the Arduino Uno:
-- **Compatibility** with all components used (e.g., HC-SR04, MPU6050, HuskyLens)
-- **Stable power management** via Vin (accepts 9–12V from battery pack)
-- **Real-time performance** suitable for obstacle avoidance and PID correction
-- **Robust support for C++ and open-source libraries**
-
-The Uno is powered from the 11.1V battery pack via the **Vin pin**, and shares a **common ground** with all sensors and drivers to maintain consistent signal reference.
 
 ---
 
