@@ -63,7 +63,7 @@ These sensors form the robot’s "eyes" for obstacle detection. The front sensor
 
 In our algorithm, distance values are constantly compared against a threshold. If the front sensor detects an obstacle within that range, the robot halts and evaluates side distances to decide which direction is safer to turn. It's also used to determine whether to move clockwise or anticlockwise direction for the game.
 
-<div style="clear: both;"></div>
+<div style="clear: both;"></div><br><br>
 
 ### 🔄 MG90s Servo Motor (180 Degrees)
 
@@ -81,7 +81,7 @@ This motor was chosen for its precise speed control and compatibility with our g
 
 The forward movement is controlled via PWM signals, and we modulate these signals based on sensor input to slow down, stop, or accelerate the robot depending on the situation.
 
-<div style="clear: both;"></div>
+<div style="clear: both;"></div><br><br>
 
 ### ⚡ L298N Motor Driver
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/L298N.jpg" width="300" align="right" style="margin-left: 20px;"/>
@@ -91,7 +91,7 @@ We used the L298N to control the two EV3 motors powering the robot’s movement.
 
 This driver takes PWM from the Arduino and outputs amplified signals to the motors. This setup gives us full control of the robot's motion dynamics.
 
-<div style="clear: both;"></div>
+<div style="clear: both;"></div><br><br>
 
 ### 🧠 Arduino Uno (ATmega328P)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/Arduino%20UNO.jpeg" width="300" align="right" style="margin-left: 20px;"/>
@@ -107,7 +107,7 @@ Key reasons we chose the Arduino Uno:
 
 The Uno is powered from the 11.1V battery pack via the **Vin pin**, and shares a **common ground** with all sensors and drivers to maintain consistent signal reference.
 
-<div style="clear: both;"></div>
+<div style="clear: both;"></div><br><br>
 
 ### 📐 GY-521 (MPU6050) – Accelerometer and Gyroscope
 
