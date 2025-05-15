@@ -141,6 +141,181 @@ This configuration provides a reliable, rechargeable power source that is compac
 ### Libraries:
 ```cpp
 #include <Wire.h>
-#include <HUSKYLENS.h>
 #include <Servo.h>
-#include <MPU6050_tockn.h>
+#include <MPU6050_light.h>
+
+// MPU and motor setup
+MPU6050 mpu(Wire);
+unsigned long timer = 0;
+
+const int MOTOR_ENB = 10;
+const int SERVO_PIN = 9;
+
+Servo steeringServo;
+
+// Ultrasonic sensor pins
+const int TRIG_LEFT = 2;
+const int ECHO_LEFT = 3;
+const int TRIG_RIGHT = 4;
+const int ECHO_RIGHT = 5;
+const int TRIG_FRONT = 6;
+const int ECHO_FRONT = 7;
+
+// Constants
+const float MAX_DISTANCE = 300.0;
+const float SIDE_TURN_DISTANCE = 90.0;
+const float TARGET_WALL_DISTANCE = 35.0;
+const float OUTER_WALL_THRESHOLD = 20.0;
+const int TOTAL_EDGES = 13;
+const int WAIT_DURATION = 1000;
+
+const int SERVO_CENTER = 90;
+const int SERVO_MAX_LEFT = 60;
+const int SERVO_MAX_RIGHT = 120;
+
+const int FORWARD_SPEED = 120;
+const int SLOW_SPEED = 90;
+
+// PID Gains
+const float KP = 1.5;
+const float KW = 0.8;
+const float KO = 0.5;
+
+// State variables
+bool directionSet = false;
+bool isClockwise = true;
+int edgeCount = 0;
+float targetAngle = 0;
+bool isWaiting = false;
+unsigned long waitStartTime = 0;
+bool isRunning = true;
+
+void setup() {
+  Serial.begin(9600);
+
+  // Servo and motor setup
+  steeringServo.attach(SERVO_PIN);
+  pinMode(MOTOR_ENB, OUTPUT);
+
+  // Sensor pins
+  pinMode(TRIG_LEFT, OUTPUT);
+  pinMode(ECHO_LEFT, INPUT);
+  pinMode(TRIG_RIGHT, OUTPUT);
+  pinMode(ECHO_RIGHT, INPUT);
+  pinMode(TRIG_FRONT, OUTPUT);
+  pinMode(ECHO_FRONT, INPUT);
+
+  Wire.begin();
+  mpu.begin();
+  mpu.calcGyroOffsets(true);
+
+  analogWrite(MOTOR_ENB, FORWARD_SPEED);
+  steeringServo.write(SERVO_CENTER);
+}
+
+float getDistance(int trigPin, int echoPin) {
+  digitalWrite(trigPin, LOW); delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH); delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  long duration = pulseIn(echoPin, HIGH, 25000);
+  float distance = duration * 0.034 / 2;
+  return (distance == 0 || distance > MAX_DISTANCE) ? MAX_DISTANCE : distance;
+}
+
+void performTurn(bool clockwise) {
+  mpu.update();
+  float startAngle = mpu.getAngleZ();
+  float turnTarget = startAngle + (clockwise ? -88 : 88);
+
+  analogWrite(MOTOR_ENB, 0); // Stop before turn
+  steeringServo.write(clockwise ? SERVO_MAX_RIGHT : SERVO_MAX_LEFT);
+  
+  while (abs(mpu.getAngleZ() - turnTarget) > 2) {
+    mpu.update();
+    analogWrite(MOTOR_ENB, SLOW_SPEED);
+  }
+
+  analogWrite(MOTOR_ENB, 0);
+  steeringServo.write(SERVO_CENTER);
+  targetAngle = turnTarget;
+}
+
+void loop() {
+  if (!isRunning) return;
+
+  mpu.update();
+  float currentAngle = mpu.getAngleZ();
+
+  float leftDist = getDistance(TRIG_LEFT, ECHO_LEFT);
+  float rightDist = getDistance(TRIG_RIGHT, ECHO_RIGHT);
+  float frontDist = getDistance(TRIG_FRONT, ECHO_FRONT);
+
+  if (!directionSet) {
+    if (rightDist > SIDE_TURN_DISTANCE && rightDist < MAX_DISTANCE) {
+      isClockwise = true;
+      directionSet = true;
+      Serial.print("First corner: Clockwise, Edge=");
+      Serial.println(edgeCount);
+      edgeCount++;
+      performTurn(isClockwise);
+      isWaiting = true;
+      waitStartTime = millis();
+    } else if (leftDist > SIDE_TURN_DISTANCE && leftDist < MAX_DISTANCE) {
+      isClockwise = false;
+      directionSet = true;
+      Serial.print("First corner: Anticlockwise, Edge=");
+      Serial.println(edgeCount);
+      edgeCount++;
+      performTurn(isClockwise);
+      isWaiting = true;
+      waitStartTime = millis();
+    }
+  }
+
+  if (directionSet) {
+    if (isWaiting && millis() - waitStartTime >= WAIT_DURATION) {
+      isWaiting = false;
+    }
+
+    float outerDist = isClockwise ? rightDist : leftDist;
+
+    if (!isWaiting && outerDist > SIDE_TURN_DISTANCE && outerDist < MAX_DISTANCE) {
+      edgeCount++;
+      Serial.print("Edge detected: Count=");
+      Serial.println(edgeCount);
+
+      if (edgeCount >= TOTAL_EDGES) {
+        Serial.println("Finished 3 laps! Performing final maneuver...");
+        performTurn(isClockwise);
+        delay(1000); // Short final run
+        analogWrite(MOTOR_ENB, 0);
+        isRunning = false;
+        while (1); // Freeze
+      }
+
+      performTurn(isClockwise);
+      isWaiting = true;
+      waitStartTime = millis();
+    }
+
+    // WALL FOLLOWING + GYRO CORRECTION
+    float gyroError = targetAngle - currentAngle;
+    int servoAngle = SERVO_CENTER;
+
+    if (!isWaiting) {
+      float innerDist = isClockwise ? leftDist : rightDist;
+      float outerDist = isClockwise ? rightDist : leftDist;
+
+      float wallError = TARGET_WALL_DISTANCE - innerDist;
+      float outerError = outerDist < OUTER_WALL_THRESHOLD ? OUTER_WALL_THRESHOLD - outerDist : 0;
+
+      servoAngle += (int)(KP * gyroError + KW * wallError + KO * outerError);
+    } else {
+      servoAngle += (int)(KP * gyroError);
+    }
+
+    servoAngle = constrain(servoAngle, SERVO_MAX_LEFT, SERVO_MAX_RIGHT);
+    steeringServo.write(servoAngle);
+    analogWrite(MOTOR_ENB, FORWARD_SPEED);
+  }
+}
