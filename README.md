@@ -14,12 +14,10 @@
 - [Project Description](#project-description)
 - [Hardware Used](#-hardware-used)
 - [Software & Libraries](#software--libraries)
-- [System Architecture](#system-architecture)
 - [Code Explanation](#code-explanation)
 - [Challenges & Solutions](#challenges--solutions)
-- [How to Run the Project](#how-to-run-the-project)
 - [Demo / Images](#demo--images)
-- [License](#license)
+
 
 ---
 
