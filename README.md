@@ -1,5 +1,5 @@
 # WRO-FUTURE-ENGINEERS-2025 - TEAM APOLLO
-
+![image alt](https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/1f0d68f9e33a2c186d23956248536f89e80ae12d/TEAM%20APOLLO%20ICON_WB.PNG)
 > An autonomous vehicle designed for the Future Engineers category of the WRO 2025 that uses computer vision and IMU sensors to navigate complex environments and avoid obstacles intelligently.
 
 ---
@@ -30,9 +30,10 @@ This project is a self-driving vehicle prototype built for the WRO Future Engine
 
 | Name | Role | Responsibility |
 |------|------|----------------|
-| Alex Roberts | Lead Programmer | Sensor Integration, Logic, Obstacle Avoidance |
-| Priya Singh | Hardware Engineer | Wiring, Circuit Design, Power Management |
-| Team RoboTrail | Dubai, UAE | 🇦🇪 |
+| PRANAV NAKKEERAN | Lead Programmer | Sensor Integration, Logic, Obstacle Avoidance |
+| MOHAMED MIFZAL MAHAROOF | Hardware Engineer | Wiring, Circuit Design, Power Management |
+| AARNAV BHARGAVA | CHEI~F Strategist |
+| Team APOLLO | Dubai, UAE | 🇦🇪 |
 
 ---
 
