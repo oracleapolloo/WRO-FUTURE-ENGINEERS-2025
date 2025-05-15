@@ -34,7 +34,7 @@ This project is a self-driving vehicle prototype built for the WRO Future Engine
 |------|------|----------------|
 | PRANAV NAKKEERAN | Lead Programmer | Sensor Integration, Logic, Obstacle Avoidance |
 | MOHAMED MIFZAL MAHAROOF | Hardware Engineer | Wiring, Circuit Design, Power Management |
-| AARNAV BHARGAVA | CHEI~F Strategist |
+| AARNAV BHARGAVA | CHEIF Strategist |
 | Team APOLLO | Dubai, UAE | 🇦🇪 |
 
 ---
@@ -54,8 +54,6 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 
 ## 🔧 Hardware Used
 
-
-
 ### Ultrasonic Sensors (HC-SR04)
 
 The HC-SR04 ultrasonic sensor is a distance-measuring device that uses sound waves to detect obstacles. It sends out an ultrasonic pulse and waits for the echo to return; by calculating the time taken for the echo, it determines the distance to an object. Three of these sensors were strategically placed on the robot—one at the front, one on the left, and one on the right.
@@ -63,8 +61,6 @@ The HC-SR04 ultrasonic sensor is a distance-measuring device that uses sound wav
 These sensors form the robot’s "eyes" for obstacle detection. The front sensor prevents collisions by detecting direct obstructions, while the side sensors monitor walls and determine when to make left or right turns. We chose this sensor because it is lightweight, inexpensive, and precise enough for our use case.
 
 In our algorithm, distance values are constantly compared against a threshold. If the front sensor detects an obstacle within that range, the robot halts and evaluates side distances to decide which direction is safer to turn. It's also used to determine whether to move clockwise or anticlockwise direction for the game.
-
-
 
 ### 🔄 MG90s Servo Motor (180 Degrees)
 
@@ -74,8 +70,6 @@ Servo motors are ideal for precise angular control, which makes them perfect for
 
 The robot uses this motor for direction adjustments. Whenever the algorithm decides to turn, a command is sent to rotate the servo to a specific angle, and then it returns to center after the turn is completed.
 
-
-
 ### ⚙️ LEGO EV3 Medium Servo Motor (45503)
 
 The LEGO EV3 Medium Motor (45503) is a powerful and durable motor capable of variable-speed control. In our build, this motor is responsible for driving the robot forward. It's connected to the rear wheels using a differential gear system that allows the wheels to rotate.
@@ -83,8 +77,6 @@ The LEGO EV3 Medium Motor (45503) is a powerful and durable motor capable of var
 This motor was chosen for its precise speed control and compatibility with our gearing setup. Its torque and RPM balance allow the robot to move smoothly across various terrains. We interfaced it with an Arduino using an L298N motor driver.
 
 The forward movement is controlled via PWM signals, and we modulate these signals based on sensor input to slow down, stop, or accelerate the robot depending on the situation.
-
-
 
 ### ⚡ L298N Motor Driver
 
@@ -94,8 +86,6 @@ We used the L298N to control the two EV3 motors powering the robot’s movement.
 
 This driver takes PWM from the Arduino and outputs amplified signals to the motors. This setup gives us full control of the robot's motion dynamics.
 
-
-
 ### 📐 GY-521 (MPU6050) – Accelerometer and Gyroscope
 
 The GY-521 module is based on the MPU6050 chip and integrates a 3-axis accelerometer and a 3-axis gyroscope. It provides orientation, tilt, and motion data in real time. In this project, it was critical for maintaining a straight path and enabling accurate turns.
@@ -104,31 +94,31 @@ We used the MPU6050 for real-time correction when the robot deviates from its pa
 
 By implementing a PID control algorithm, we used the gyro's yaw values to compare current vs. desired heading. The output of the PID was used to adjust motor speeds, ensuring the robot moved straight even on imperfect surfaces or after making a turn.
 
+### 🧠 HuskyLens (AI Vision Sensor)
 
+HuskyLens is an easy-to-use AI vision sensor capable of object detection, face recognition, color detection, line following, and more. We used it to enhance our robot’s visual processing capabilities and add intelligent behavior.
 
-### 🔋 Power Supply
+In our setup, HuskyLens is used primarily for detecting objects and line-following in specific challenge conditions. Its built-in machine learning support allowed us to train it for object shapes relevant to the field without needing external computing.
 
-The robot is powered using **three 18650 lithium-ion batteries** connected in series. Each battery provides approximately **3.7V**, giving a total of around **11.1V** output. This voltage is ideal for powering both the Arduino and the motor systems efficiently.
+HuskyLens communicates with the Arduino using UART, and we tuned it to provide real-time visual feedback that influences the robot's high-level decision-making.
 
-- The **Arduino** is powered through its **Vin pin**, which can safely take 9–12V inputs.
-- The **L298N motor driver** is also powered from the same 11.1V supply, which is used to drive the LEGO EV3 motors.
-- A **common ground** is shared between all modules (Arduino, sensors, drivers, and motors) to ensure stable and consistent operation.
+### 🧱 Custom 3D Printed Chassis
 
-This configuration provides a reliable, rechargeable power source that is compact and suited for mobile robotic platforms like this one.
+The robot’s body was custom-designed using Fusion 360 and 3D printed using PLA material. It features compartments and mounting slots for all components including the Arduino, L298N, sensors, and battery pack.
 
----
+Designing the chassis in-house allowed us to create a compact, structurally balanced frame optimized for center of gravity and accessibility during repairs. This helped reduce weight and simplified wiring.
 
+The body was printed in multiple parts and assembled using screws, with space allocated for airflow, cable routing, and sensor field-of-view.
 
+### 🔋 Power Supply (3x 18650 Battery Pack)
 
+The robot is powered using **three 18650 lithium-ion batteries** connected in series, giving a total of approximately **11.1V**.
 
+- The **Arduino** is powered via its **Vin pin**, accepting 9–12V input.
+- The **L298N** draws power from the same source and drives the EV3 motors.
+- A **common ground** is maintained across all components for signal stability.
 
-- HuskyLens (AI Vision Sensor)
-- GY-521 MPU6050 (IMU)
-- Ultrasonic Sensors (x3)
-- LEGO EV3 Medium Motor via L298N Motor Driver
-- Servo Motor
-- 12V Battery Pack
-- Custom 3D Printed Chassis
+This setup provides enough voltage and current to power all modules simultaneously without voltage drops or overheating issues.
 
 ---
 
