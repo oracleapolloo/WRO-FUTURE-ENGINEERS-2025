@@ -52,11 +52,11 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 
 ---
 
-# 🔧 Hardware Used
+## 🔧 Hardware Used
 
 
 
-## Ultrasonic Sensors (HC-SR04)
+### Ultrasonic Sensors (HC-SR04)
 
 The HC-SR04 ultrasonic sensor is a distance-measuring device that uses sound waves to detect obstacles. It sends out an ultrasonic pulse and waits for the echo to return; by calculating the time taken for the echo, it determines the distance to an object. Three of these sensors were strategically placed on the robot—one at the front, one on the left, and one on the right.
 
@@ -66,7 +66,7 @@ In our algorithm, distance values are constantly compared against a threshold. I
 
 
 
-## 🔄 MG90s Servo Motor (180 Degrees)
+### 🔄 MG90s Servo Motor (180 Degrees)
 
 The MG90s is a metal-gear micro servo motor with 180 degrees of rotational freedom. We used one MG90s to control the steering mechanism of the robot. It's attached to a set of front wheels via bevel gears, allowing both tires to turn simultaneously for smooth and precise left/right navigation.
 
@@ -76,7 +76,7 @@ The robot uses this motor for direction adjustments. Whenever the algorithm deci
 
 
 
-## ⚙️ LEGO EV3 Medium Servo Motor (45503)
+### ⚙️ LEGO EV3 Medium Servo Motor (45503)
 
 The LEGO EV3 Medium Motor (45503) is a powerful and durable motor capable of variable-speed control. In our build, this motor is responsible for driving the robot forward. It's connected to the rear wheels using a differential gear system that allows the wheels to rotate.
 
@@ -86,7 +86,7 @@ The forward movement is controlled via PWM signals, and we modulate these signal
 
 
 
-## ⚡ L298N Motor Driver
+### ⚡ L298N Motor Driver
 
 The L298N is a dual H-bridge motor driver module that allows control over the speed and direction of DC motors. It acts as the interface between the Arduino and the LEGO EV3 motors, supplying the necessary current and voltage while allowing for directional control via digital signals.
 
@@ -96,7 +96,7 @@ This driver takes PWM from the Arduino and outputs amplified signals to the moto
 
 
 
-## 📐 GY-521 (MPU6050) – Accelerometer and Gyroscope
+### 📐 GY-521 (MPU6050) – Accelerometer and Gyroscope
 
 The GY-521 module is based on the MPU6050 chip and integrates a 3-axis accelerometer and a 3-axis gyroscope. It provides orientation, tilt, and motion data in real time. In this project, it was critical for maintaining a straight path and enabling accurate turns.
 
@@ -106,7 +106,7 @@ By implementing a PID control algorithm, we used the gyro's yaw values to compar
 
 
 
-## 🔋 Power Supply
+### 🔋 Power Supply
 
 The robot is powered using **three 18650 lithium-ion batteries** connected in series. Each battery provides approximately **3.7V**, giving a total of around **11.1V** output. This voltage is ideal for powering both the Arduino and the motor systems efficiently.
 
