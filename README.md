@@ -54,118 +54,118 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 
 ## 🔧 Hardware Used
 ### Ultrasonic Sensors (HC-SR04)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/HC-SR04.jpeg" width="412" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/HC-SR04.jpeg" width="275" align="right" style="margin-left: 20px;" />
 The HC-SR04 is an ultrasonic distance sensor that measures proximity using sound waves. It emits a high-frequency pulse and waits for the echo to return from nearby objects. By measuring the time between the pulse and the echo, it calculates the distance to an obstacle with reasonable accuracy.
 
 In our robot, we used **three HC-SR04 sensors** — positioned at the front, left, and right. The front sensor is used for **collision detection**, ensuring the robot stops before hitting any obstacle. The side sensors are responsible for **wall tracking and edge navigation**, helping the robot stay aligned with track boundaries and make intelligent turning decisions.
 
-We selected the HC-SR04 because it is:
-- **Lightweight and low-cost**
-- **Easy to interface** with Arduino (using digital I/O pins)
-- **Sufficiently accurate** for our game conditions
+>We selected the HC-SR04 because it is:
+>- **Lightweight and low-cost**
+>- **Easy to interface** with Arduino (using digital I/O pins)
+>- **Sufficiently accurate** for our game conditions
 
 In software, we use filtered readings from the sensors to smooth out noise. When the front sensor detects a close obstacle, the robot checks both side distances and turns in the safer direction. This logic also helps determine whether to navigate **clockwise or counterclockwise** during the autonomous laps.
 <div style="clear: both;"></div><br>
 
 ### 🔄 MG90s Servo Motor (180 Degrees)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/MG90S.JPG" width="412" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/MG90S.JPG" width="275" align="right" style="margin-left: 20px;" />
 The MG90s is a high-torque, metal-gear micro servo motor that supports 180° of rotational movement. In our robot, we used a single MG90s motor to control the steering mechanism, enabling real-time left and right directional changes based on input from the control algorithm.
 
 It is mechanically linked to the front wheels through a bevel gear system, which synchronizes both wheels to turn simultaneously. This allows for precise and responsive steering adjustments, essential for navigating corners, making U-turns, and handling obstacle avoidance routines.
 
 Servo motors like the MG90s are ideal for steering due to their positional accuracy and low-latency response. We selected this model for its compact form factor, high torque-to-size ratio, and durable internal gears that support repeated directional changes during multiple autonomous laps.
 
-Why we chose MG90s:
-- **180° rotation** for full turning flexibility
-- **Metal gear construction** for durability
-- **Lightweight** and compact design
-- **Simple PWM control** via Arduino
-- **Quick response time** for rapid steering
+>Why we chose MG90s:
+>- **180° rotation** for full turning flexibility
+>- **Metal gear construction** for durability
+>- **Lightweight** and compact design
+>- **Simple PWM control** via Arduino
+>- **Quick response time** for rapid steering
 
 This motor ensures smooth, consistent directional control, improving the robot’s agility and responsiveness in both obstacle-rich and open track sections.
 <div style="clear: both;"></div><br>
 
 ### ⚙️ LEGO EV3 Medium Servo Motor (45503)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/45503.jpeg" width="412" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/45503.jpeg" width="275" align="right" style="margin-left: 20px;" />
 The LEGO EV3 Medium Motor (45503) is a compact yet powerful servo motor capable of precise speed and directional control. We used this motor to drive the robot’s rear wheels using a differential gear system, enabling smooth and efficient linear movement.
 
 This motor provides the necessary torque and RPM for consistent motion across various field surfaces. Its internal rotary encoder allows for accurate speed regulation, which is essential when executing PID-controlled driving strategies or navigating tight track corners.
 
 We interfaced the EV3 motor with the Arduino via the L298N motor driver, allowing full control using PWM signals. The Arduino adjusts these signals in real time based on sensor feedback from the ultrasonic sensors and gyroscope.
 
-Why we chose the LEGO EV3 Medium Motor:
-- **High torque** with compact design
-- **Precise speed control** using encoders
-- **Compatible** with our differential drivetrain
-- **Reliable performance** under load
-- **Robust housing** and long-term durability
+>Why we chose the LEGO EV3 Medium Motor:
+>- **High torque** with compact design
+>- **Precise speed control** using encoders
+>- **Compatible** with our differential drivetrain
+>- **Reliable performance** under load
+>- **Robust housing** and long-term durability
 
 Its combination of control precision, power efficiency, and mechanical robustness made it the ideal choice for driving the robot during autonomous navigation and obstacle-avoidance tasks.
 <div style="clear: both;"></div><br>
 
 ### ⚡ L298N Motor Driver
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/L298N.jpg" width="412" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/L298N.jpg" width="275" align="right" style="margin-left: 20px;" />
 The L298N is a dual H-bridge motor driver that allows control over both the speed and direction of two DC motors independently. It serves as the main interface between the Arduino and the LEGO EV3 motors used in our robot, enabling precise control using standard logic-level signals.
 
 In our design, the L298N receives PWM signals from the Arduino to control the EV3 motor speeds and digital HIGH/LOW logic to reverse direction. This flexibility allows us to dynamically adjust movement, perform turns, and apply PID-based corrections in real time.
 
 Its built-in heat sink and ability to handle high current made it ideal for our application, especially with heavy-duty motors like the EV3 series. It supports up to 2A per channel and is robust enough for continuous driving.
 
-Why we chose L298N:
-- **Dual H-bridge** control for 2 motors
-- **PWM speed control** via Arduino
-- **Reversing logic** with digital signals
-- **Integrated heat sink** for thermal protection
-- **Readily available and cost-effective**
+>Why we chose L298N:
+>- **Dual H-bridge** control for 2 motors
+>- **PWM speed control** via Arduino
+>- **Reversing logic** with digital signals
+>- **Integrated heat sink** for thermal protection
+>- **Readily available and cost-effective**
 
 The L298N gave us the flexibility and power needed to drive the robot consistently across different movement modes.
 <div style="clear: both;"></div><br>
 
 ### 🧠 Arduino Uno (ATmega328P)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/Arduino%20UNO.jpeg" width="412" align="right" style="margin-left: 20px;"/>
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/Arduino%20UNO.jpeg" width="275" align="right" style="margin-left: 20px;"/>
 The Arduino Uno is the main microcontroller board used in our robot for processing sensor inputs and controlling all outputs like motors and servos. It features an ATmega328P chip, 14 digital I/O pins (6 PWM-enabled), 6 analog inputs, and USB support for programming.
 
 We selected the Uno for its ease of use, wide compatibility with modules like the L298N, HuskyLens, MPU6050, and ultrasonic sensors, and strong community support. It serves as the brain of our system — interpreting sensor data, executing control algorithms, and coordinating all movement and decision logic.
 
-Key reasons we chose the Arduino Uno:
-- **Compatibility** with all components used (e.g., HC-SR04, MPU6050, HuskyLens)
-- **Stable power management** via Vin (accepts 9–12V from battery pack)
-- **Real-time performance** suitable for obstacle avoidance and PID correction
-- **Robust support for C++ and open-source libraries**
+>Key reasons we chose the Arduino Uno:
+>- **Compatibility** with all components used (e.g., HC-SR04, MPU6050, HuskyLens)
+>- **Stable power management** via Vin (accepts 9–12V from battery pack)
+>- **Real-time performance** suitable for obstacle avoidance and PID correction
+>- **Robust support for C++ and open-source libraries**
 
 The Uno is powered from the 11.1V battery pack via the **Vin pin**, and shares a **common ground** with all sensors and drivers to maintain consistent signal reference.
 <div style="clear: both;"></div><br>
 
 ### 📐 GY-521 (MPU6050) – Accelerometer and Gyroscope
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/GY-521.JPG" width="412" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/GY-521.JPG" width="275" align="right" style="margin-left: 20px;" />
 The GY-521 module features the MPU6050 sensor, which combines a 3-axis accelerometer and a 3-axis gyroscope. It provides precise motion tracking and orientation data. In our robot, this module plays a critical role in maintaining directional accuracy and stability during movement.
 
 We primarily used the MPU6050 for real-time angular drift correction and smooth turning. The gyroscope outputs yaw angle data, which we compare against the desired heading using a PID control loop. Any deviation triggers motor adjustments to bring the robot back on track.
 
 The accelerometer complements the gyro by confirming orientation changes, especially during turns or minor bumps. This dual-sensor setup ensures the robot maintains a straight path and completes clean, accurate rotations.
 
-Why we chose the MPU6050:
-- **Compact and lightweight** form factor
-- **I2C communication** for easy integration with Arduino
-- **Stable 6-axis motion data** in real-time
-- **Compatible** with PID-based feedback control systems
+>Why we chose the MPU6050:
+>- **Compact and lightweight** form factor
+>- **I2C communication** for easy integration with Arduino
+>- **Stable 6-axis motion data** in real-time
+>- **Compatible** with PID-based feedback control systems
 
 Its reliability and precision made it ideal for core navigation and turn-based logic across varying field conditions.
 <div style="clear: both;"></div><br>
 
 ### 🧠 HuskyLens (AI Vision Sensor)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/HUSKYLENS.jpg" width="412" align="right" style="margin-left: 20px;"/>
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/HUSKYLENS.jpg" width="275" align="right" style="margin-left: 20px;"/>
 HuskyLens is an AI-powered vision sensor capable of object detection, face recognition, color recognition, line following, and tag scanning. It features onboard machine learning with a built-in display, enabling training and testing without a PC.
 
 In our robot, HuskyLens is used for real-time object detection and line following during visual challenges. We trained it to recognize specific object shapes and colored markers placed on the field. Based on visual input, the Arduino adjusts movement, such as switching direction or triggering obstacle routines.
 
 HuskyLens was selected for its simplicity, standalone learning capability, and ability to integrate seamlessly with Arduino via UART. The onboard interface allowed us to re-train and test directly in the field with no coding changes.
 
-Key reasons we chose HuskyLens:
-- **One-click training** for multiple vision modes
-- **Live visual feedback** on the sensor’s screen
-- **Fast onboard AI** (no internet/cloud required)
-- **Easy integration** over serial communication (UART)
+>Key reasons we chose HuskyLens:
+>- **One-click training** for multiple vision modes
+>- **Live visual feedback** on the sensor’s screen
+>- **Fast onboard AI** (no internet/cloud required)
+>- **Easy integration** over serial communication (UART)
 
 This sensor acts as the robot’s "vision brain" for intelligent decisions based on visual patterns and object proximity.
 <div style="clear: both;"></div><br>
