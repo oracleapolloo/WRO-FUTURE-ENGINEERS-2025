@@ -153,7 +153,7 @@ The accelerometer complements the gyro by confirming orientation changes, especi
 Its reliability and precision made it ideal for core navigation and turn-based logic across varying field conditions.
 <div style="clear: both;"></div><br>
 
-### 🧠 HuskyLens (AI Vision Sensor)
+### 🧠Pixycam V2 
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/HUSKYLENS.jpg" width="275" align="right" style="margin-left: 20px;"/>
 >Key reasons we chose HuskyLens:
 >- **One-click training** for multiple vision modes
@@ -161,7 +161,7 @@ Its reliability and precision made it ideal for core navigation and turn-based l
 >- **Fast onboard AI** (no internet/cloud required)
 >- **Easy integration** over serial communication (UART)
 
-HuskyLens is an AI-powered vision sensor capable of object detection, face recognition, color recognition, line following, and tag scanning. It features onboard machine learning with a built-in display, enabling training and testing without a PC.
+Pixycam v2 is an AI-powered vision sensor capable of object detection, face recognition, color recognition, line following, and tag scanning. It features onboard machine learning with a built-in display, enabling training and testing without a PC.
 
 In our robot, HuskyLens is used for real-time object detection and line following during visual challenges. We trained it to recognize specific object shapes and colored markers placed on the field. Based on visual input, the Arduino adjusts movement, such as switching direction or triggering obstacle routines.
 
