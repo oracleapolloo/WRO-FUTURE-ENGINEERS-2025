@@ -31,7 +31,7 @@
 ---
 
 ## 🚙 Overview
-This project is a self-driving vehicle prototype built for the WRO Future Engineers 2025 competition. It utilizes a HuskyLens for vision-based obstacle recognition, an MPU6050 IMU for orientation and tilt detection, and ultrasonic sensors for distance measurement. The robot makes intelligent decisions to turn, stop, or accelerate based on sensor data and machine vision feedback.
+This self-driving vehicle prototype, developed for the WRO Future Engineers 2025 competition, is a fully autonomous system combining real-time decision-making with a compact and modular hardware layout. It features a PixyCam (formerly HuskyLens) for object and color-based vision tracking, an MPU6050 (GY-521) IMU for orientation sensing and drift correction, and three HC-SR04 ultrasonic sensors for obstacle detection, wall following, and collision prevention. The robot’s behavior is governed by a combination of PID control, filtered sensor data, and logic-based navigation, allowing it to maintain center alignment and adapt smoothly to changing track environments. Its structure includes prefabricated parts alongside custom 3D-printed mounts, optimized for precise sensor placement and clean wiring. Power is delivered via an 11.1V lithium-ion battery pack using three 18650 cells. The entire system is programmed using Arduino, with modules communicating through PWM, UART, and I²C protocols to coordinate steering, sensors, and motor control. Altogether, this vehicle presents a robust and competition-ready platform that brings together mechanical design, embedded control systems, and smart autonomous behavior.
 
 ---
 
