@@ -7,7 +7,7 @@
 ---
   
 ## 📁 Content Structure
-* `t-photos` – Contains 2 team photos: one official and one funny group pic 😄  
+* `t-photos` – Contains an official team photo and several funny group pics for the vibes 😄  
 * `v-photos` – Includes 6 vehicle images: top, bottom, front, back, left, and right  
 * `video` – Holds `video.md` with a link to the driving demonstration  
 * `schemes` – Contains a PDF file showing the full documentation, wiring, and electromechanical schematics of the robot setup.
