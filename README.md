@@ -197,7 +197,7 @@ This configuration ensures sufficient voltage and current to support multiple se
 > - **Custom fit** for sensors like MPU6050  
 > - **Enhanced wiring and airflow**
 
-While our robot’s main frame is built using traditional mounting plates and brackets, we 3D printed specific parts to enhance layout, fit, and function. These include the **gyroscope (MPU6050) base**, **sensor holders**, and **Arduino standoffs**.
+While our robot’s main frame is built using traditional mounting plates and brackets, we 3D printed specific parts to enhance layout, fit, and function. These include the **gyroscope (MPU6050) base**, and **ultra sonic sensor holders**.
 
 A critical use of 3D printing was to correctly position the MPU6050 at the **robot's center of gravity**, minimizing rotational noise and improving PID accuracy. This helped the gyroscope give more stable yaw values, especially during turns.
 
