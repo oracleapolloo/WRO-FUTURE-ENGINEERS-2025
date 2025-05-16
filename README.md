@@ -1,29 +1,36 @@
 # WRO-FUTURE-ENGINEERS-2025 - TEAM APOLLO
-
 </p>
 <p align="center">
   <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/26cbb35791b8c0269d3ff0fe9a6655497de72f7e/other/TEAM%20APOLLO%20ICON_WB.PNG" width="420"/>
-
+  
   > An autonomous vehicle designed for the Future Engineers category of the WRO 2025 that uses computer vision and IMU sensors to navigate complex environments and avoid obstacles intelligently.
-
+---
+  
+## 📁 Content Structure
+* `t-photos` – Contains 2 team photos: one official and one funny group pic 😄  
+* `v-photos` – Includes 6 vehicle images: top, bottom, front, back, left, and right  
+* `video` – Holds `video.md` with a link to the driving demonstration  
+* `schemes` – Schematic diagrams (JPG, PNG, or PDF) showing the wiring and electromechanical connections  
+* `src` – Full source code for all control components used in the competition  
+* `models` – 3D print, laser-cut, or CNC-ready model files (remove if unused)  
+* `other` – Any additional helpful docs: SBC upload instructions, specs, datasets, protocols (remove if unused)  
 ---
 
 ## 📌 Table of Contents
-- [Overview](#overview)
-- [Team Information](#team-information)
-- [Project Description](#project-description)
-- [Hardware Used](#-hardware-used)
-- [Software & Libraries](#software--libraries)
-- [Code Explanation](#code-explanation)
-- [Challenges & Solutions](#challenges--solutions)
-- [Demo / Images](#demo--images)
 
+- [Overview](#overview)  
+- [Team Information](#team-information)  
+- [Project Description](#project-description)  
+- [Hardware Used](#-hardware-used)  
+- [Software & Libraries](#software--libraries)  
+- [Code Explanation](#code-explanation)  
+- [Challenges & Solutions](#challenges--solutions)  
+- [Demo / Images](#demo--images)  
+- [Content Structure](#content-structure)
 
 ---
 
-## Overview
-
-
+## 🚙 Overview
 This project is a self-driving vehicle prototype built for the WRO Future Engineers 2025 competition. It utilizes a HuskyLens for vision-based obstacle recognition, an MPU6050 IMU for orientation and tilt detection, and ultrasonic sensors for distance measurement. The robot makes intelligent decisions to turn, stop, or accelerate based on sensor data and machine vision feedback.
 
 ---
