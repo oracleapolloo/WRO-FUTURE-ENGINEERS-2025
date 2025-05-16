@@ -54,24 +54,22 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 
 ## 🔧 Hardware Used
 ### Ultrasonic Sensors (HC-SR04)
-
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/HC-SR04.jpeg" width="300" align="right" style="margin-left: 20px;"/>
-
 The HC-SR04 ultrasonic sensor is a distance-measuring device that uses sound waves to detect obstacles. It sends out an ultrasonic pulse and waits for the echo to return; by calculating the time taken for the echo, it determines the distance to an object. Three of these sensors were strategically placed on the robot—one at the front, one on the left, and one on the right.
 
 These sensors form the robot’s "eyes" for obstacle detection. The front sensor prevents collisions by detecting direct obstructions, while the side sensors monitor walls and determine when to make left or right turns. We chose this sensor because it is lightweight, inexpensive, and precise enough for our use case.
 
 In our algorithm, distance values are constantly compared against a threshold. If the front sensor detects an obstacle within that range, the robot halts and evaluates side distances to decide which direction is safer to turn. It's also used to determine whether to move clockwise or anticlockwise direction for the game.
-
-<div style="clear: both;"></div><br><br>
+<div style="clear: both;"></div><br>
 
 ### 🔄 MG90s Servo Motor (180 Degrees)
-
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/MG90S.JPG" width="300" align="right" style="margin-left: 20px;"/>
 The MG90s is a metal-gear micro servo motor with 180 degrees of rotational freedom. We used one MG90s to control the steering mechanism of the robot. It's attached to a set of front wheels via bevel gears, allowing both tires to turn simultaneously for smooth and precise left/right navigation.
 
 Servo motors are ideal for precise angular control, which makes them perfect for steering. We selected the MG90s due to its compact size, high torque, and reliable performance in embedded systems.
 
 The robot uses this motor for direction adjustments. Whenever the algorithm decides to turn, a command is sent to rotate the servo to a specific angle, and then it returns to center after the turn is completed.
+<div style="clear: both;"></div><br>
 
 ### ⚙️ LEGO EV3 Medium Servo Motor (45503)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/45503.jpeg" width="300" align="right" style="margin-left: 20px;"/>
@@ -80,8 +78,7 @@ The LEGO EV3 Medium Motor (45503) is a powerful and durable motor capable of var
 This motor was chosen for its precise speed control and compatibility with our gearing setup. Its torque and RPM balance allow the robot to move smoothly across various terrains. We interfaced it with an Arduino using an L298N motor driver.
 
 The forward movement is controlled via PWM signals, and we modulate these signals based on sensor input to slow down, stop, or accelerate the robot depending on the situation.
-
-<div style="clear: both;"></div><br><br>
+<div style="clear: both;"></div><br>
 
 ### ⚡ L298N Motor Driver
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/L298N.jpg" width="300" align="right" style="margin-left: 20px;"/>
@@ -90,8 +87,7 @@ The L298N is a dual H-bridge motor driver module that allows control over the sp
 We used the L298N to control the two EV3 motors powering the robot’s movement. It enables us to set motor speed using PWM signals and to change direction using logic inputs. Its built-in heat sink and current-handling capability made it ideal for our setup.
 
 This driver takes PWM from the Arduino and outputs amplified signals to the motors. This setup gives us full control of the robot's motion dynamics.
-
-<div style="clear: both;"></div><br><br>
+<div style="clear: both;"></div><br>
 
 ### 🧠 Arduino Uno (ATmega328P)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/Arduino%20UNO.jpeg" width="300" align="right" style="margin-left: 20px;"/>
@@ -106,37 +102,27 @@ Key reasons we chose the Arduino Uno:
 - **Robust support for C++ and open-source libraries**
 
 The Uno is powered from the 11.1V battery pack via the **Vin pin**, and shares a **common ground** with all sensors and drivers to maintain consistent signal reference.
-
-<div style="clear: both;"></div><br><br>
+<div style="clear: both;"></div><br>
 
 ### 📐 GY-521 (MPU6050) – Accelerometer and Gyroscope
-
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/GY-521.JPG" width="300" align="right" style="margin-left: 20px;"/>
 The GY-521 module is based on the MPU6050 chip and integrates a 3-axis accelerometer and a 3-axis gyroscope. It provides orientation, tilt, and motion data in real time. In this project, it was critical for maintaining a straight path and enabling accurate turns.
 
 We used the MPU6050 for real-time correction when the robot deviates from its path. The gyroscope data allowed us to detect drift and apply corrective actions using PID (Proportional–Integral–Derivative) control. The accelerometer helped confirm orientation, especially during turns.
 
 By implementing a PID control algorithm, we used the gyro's yaw values to compare current vs. desired heading. The output of the PID was used to adjust motor speeds, ensuring the robot moved straight even on imperfect surfaces or after making a turn.
+<div style="clear: both;"></div><br>
 
 ### 🧠 HuskyLens (AI Vision Sensor)
-
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/HUSKYLENS.jpg" width="300" align="right" style="margin-left: 20px;"/>
 HuskyLens is an easy-to-use AI vision sensor capable of object detection, face recognition, color detection, line following, and more. We used it to enhance our robot’s visual processing capabilities and add intelligent behavior.
 
 In our setup, HuskyLens is used primarily for detecting objects and line-following in specific challenge conditions. Its built-in machine learning support allowed us to train it for object shapes relevant to the field without needing external computing.
 
 HuskyLens communicates with the Arduino using UART, and we tuned it to provide real-time visual feedback that influences the robot's high-level decision-making.
-
-
-
-### 🧱 Custom 3D Printed Chassis
-
-The robot’s body was custom-designed using Fusion 360 and 3D printed using PLA material. It features compartments and mounting slots for all components including the Arduino, L298N, sensors, and battery pack.
-
-Designing the chassis in-house allowed us to create a compact, structurally balanced frame optimized for center of gravity and accessibility during repairs. This helped reduce weight and simplified wiring.
-
-The body was printed in multiple parts and assembled using screws, with space allocated for airflow, cable routing, and sensor field-of-view.
+<div style="clear: both;"></div><br>
 
 ### 🔋 Power Supply (3x 18650 Battery Pack)
-
 The robot is powered using **three 18650 lithium-ion batteries** connected in series, giving a total of approximately **11.1V**.
 
 - The **Arduino** is powered via its **Vin pin**, accepting 9–12V input.
@@ -144,8 +130,15 @@ The robot is powered using **three 18650 lithium-ion batteries** connected in se
 - A **common ground** is maintained across all components for signal stability.
 
 This setup provides enough voltage and current to power all modules simultaneously without voltage drops or overheating issues.
+<div style="clear: both;"></div><br>
 
+### 🧱 Custom 3D Printed Chassis
+The robot’s body was custom-designed using Fusion 360 and 3D printed using PLA material. It features compartments and mounting slots for all components including the Arduino, L298N, sensors, and battery pack.
 
+Designing the chassis in-house allowed us to create a compact, structurally balanced frame optimized for center of gravity and accessibility during repairs. This helped reduce weight and simplified wiring.
+
+The body was printed in multiple parts and assembled using screws, with space allocated for airflow, cable routing, and sensor field-of-view.
+<div style="clear: both;"></div><br>
 ---
 
 ## 💻 Software & Libraries
