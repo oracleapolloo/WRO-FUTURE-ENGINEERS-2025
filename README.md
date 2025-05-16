@@ -53,12 +53,14 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 ---
 
 ## 🔧 Hardware Used
+
 ### Ultrasonic Sensors (3x HC-SR04)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/HC-SR04.jpeg" width="275" align="right" style="margin-left: 20px;" />
->We selected the HC-SR04 because it is:
->- **Lightweight and low-cost**
->- **Easy to interface** with Arduino (using digital I/O pins)
->- **Sufficiently accurate** for our game conditions
+
+We selected the HC-SR04 because it is:  
+> - **Lightweight and low-cost**  
+> - **Easy to interface** with Arduino (using digital I/O pins)  
+> - **Sufficiently accurate** for our game conditions  
 
 The HC-SR04 is an ultrasonic distance sensor that measures proximity using sound waves. It emits a high-frequency pulse and waits for the echo to return from nearby objects. By measuring the time between the pulse and the echo, it calculates the distance to an obstacle with reasonable accuracy.
 
@@ -69,7 +71,8 @@ In software, we use filtered readings from the sensors to smooth out noise. When
 
 ### 🔄 MG90s Servo Motor (180 Degrees)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/MG90S.JPG" width="275" align="right" style="margin-left: 20px;" />
->Why we chose MG90s:
+
+Why we chose MG90s:
 >- **180° rotation** for full turning flexibility
 >- **Metal gear construction** for durability
 >- **Lightweight** and compact design
@@ -87,7 +90,8 @@ This motor ensures smooth, consistent directional control, improving the robot�
 
 ### ⚙️ LEGO EV3 Medium Servo Motor (45503)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/45503.jpeg" width="275" align="right" style="margin-left: 20px;" />
->Why we chose the LEGO EV3 Medium Motor:
+
+Why we chose the LEGO EV3 Medium Motor:
 >- **High torque** with compact design
 >- **Precise speed control** using encoders
 >- **Compatible** with our differential drivetrain
@@ -105,7 +109,8 @@ Its combination of control precision, power efficiency, and mechanical robustnes
 
 ### ⚡ L298N Motor Driver
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/L298N.jpg" width="275" align="right" style="margin-left: 20px;" />
->Why we chose L298N:
+
+Why we chose L298N:
 >- **Dual H-bridge** control for 2 motors
 >- **PWM speed control** via Arduino
 >- **Reversing logic** with digital signals
@@ -123,7 +128,8 @@ The L298N gave us the flexibility and power needed to drive the robot consistent
 
 ### 🧠 Arduino Uno (ATmega328P)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/Arduino%20UNO.jpeg" width="275" align="right" style="margin-left: 20px;"/>
->Key reasons we chose the Arduino Uno:
+
+Key reasons we chose the Arduino Uno:
 >- **Compatibility** with all components used (e.g., HC-SR04, MPU6050, HuskyLens)
 >- **Stable power management** via Vin (accepts 9–12V from battery pack)
 >- **Real-time performance** suitable for obstacle avoidance and PID correction
@@ -138,7 +144,8 @@ The Uno is powered from the 11.1V battery pack via the **Vin pin**, and shares a
 
 ### 📐 GY-521 (MPU6050) – Accelerometer and Gyroscope
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/GY-521.JPG" width="275" align="right" style="margin-left: 20px;" />
->Why we chose the MPU6050:
+
+Why we chose the MPU6050:
 >- **Compact and lightweight** form factor
 >- **I2C communication** for easy integration with Arduino
 >- **Stable 6-axis motion data** in real-time
@@ -155,7 +162,8 @@ Its reliability and precision made it ideal for core navigation and turn-based l
 
 ### 🧠 PixyCam (Vision Sensor)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/PixyCam.JPG" width="275" align="right" style="margin-left: 20px;"/>
-> Key reasons we chose PixyCam:  
+
+Key reasons we chose PixyCam:  
 > - **Real-time color-based object tracking**  
 > - **Fast onboard image processing**  
 > - **Reliable detection of multiple objects simultaneously**  
@@ -172,7 +180,8 @@ This sensor plays a vital role in giving our robot vision-based decision-making,
 
 ### 🔋 Power Supply (3x 18650 Battery Pack)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/925b963f555168b780b46e221f96b3fa813c4e4c/other/18650.jpg" width="275" align="right" style="margin-left: 20px;" />
-> Why we chose this power system:  
+
+Why we chose this power system:  
 > - **Compact & modular** battery solution  
 > - **Ideal voltage** for Arduino & L298N  
 > - **Stable performance** during full operation  
@@ -190,7 +199,8 @@ This configuration ensures sufficient voltage and current to support multiple se
 
 ### 🧱 Custom 3D Printed Components
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/3D-Printed%20Bot.jpg" width="275" align="right" style="margin-left: 20px;" />
-> Why we 3D printed select parts:  
+
+Why we 3D printed select parts:  
 > - **Precise mounting** for key modules  
 > - **Improved center of gravity** for balance  
 > - **Modular design** for repairs or upgrades  
