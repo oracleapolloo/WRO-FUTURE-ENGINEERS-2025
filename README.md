@@ -158,14 +158,14 @@ The L298N gave us the flexibility and power needed to drive the robot consistent
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/Arduino%20UNO.jpeg" width="275" align="right" style="margin-left: 20px;"/>
 
 Key reasons we chose the Arduino Uno:
->- **Compatibility** with all components used (e.g., HC-SR04, MPU6050, HuskyLens)
+>- **Compatibility** with all components used (e.g., HC-SR04, MPU6050, PixyCam)
 >- **Stable power management** via Vin (accepts 9–12V from battery pack)
 >- **Real-time performance** suitable for obstacle avoidance and PID correction
 >- **Robust support for C++ and open-source libraries**
 
 The Arduino Uno is the main microcontroller board used in our robot for processing sensor inputs and controlling all outputs like motors and servos. It features an ATmega328P chip, 14 digital I/O pins (6 PWM-enabled), 6 analog inputs, and USB support for programming.
 
-We selected the Uno for its ease of use, wide compatibility with modules like the L298N, HuskyLens, MPU6050, and ultrasonic sensors, and strong community support. It serves as the brain of our system — interpreting sensor data, executing control algorithms, and coordinating all movement and decision logic.
+We selected the Uno for its ease of use, wide compatibility with modules like the L298N, PixyCam, MPU6050, and ultrasonic sensors, and strong community support. It serves as the brain of our system — interpreting sensor data, executing control algorithms, and coordinating all movement and decision logic.
 
 The Uno is powered from the 11.1V battery pack via the **Vin pin**, and shares a **common ground** with all sensors and drivers to maintain consistent signal reference.
 <div style="clear: both;"></div><br>
@@ -250,7 +250,7 @@ This hybrid approach — using both prefabricated and 3D printed parts — gave 
 
 ### Tools:
 - Arduino IDE
-- HuskyLens firmware & software
+- PixyCam firmware & software
 
 ### getFilteredDistance():
 #### Reliable Sensor Reading
