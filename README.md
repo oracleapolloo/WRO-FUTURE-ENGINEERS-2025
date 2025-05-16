@@ -2,7 +2,7 @@
 
 </p>
 <p align="center">
-  <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/1f0d68f9e33a2c186d23956248536f89e80ae12d/other/TEAM%20APOLLO%20ICON_WB.PNG" width="420"/>
+  <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/26cbb35791b8c0269d3ff0fe9a6655497de72f7e/other/TEAM%20APOLLO%20ICON_WB.PNG" width="420"/>
 
   > An autonomous vehicle designed for the Future Engineers category of the WRO 2025 that uses computer vision and IMU sensors to navigate complex environments and avoid obstacles intelligently.
 
