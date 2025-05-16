@@ -35,15 +35,36 @@ This self-driving vehicle prototype, developed for the WRO Future Engineers 2025
 
 ---
 
-## Team Information
-
-| Name | Role | Responsibility |
-|------|------|----------------|
-| PRANAV NAKKEERAN | Lead Programmer | Sensor Integration, Logic, Obstacle Avoidance |
-| MOHAMED MIFZAL MAHAROOF | Hardware Engineer | Wiring, Circuit Design, Power Management |
-| AARNAV BHARGAVA | CHEIF Strategist |
-| Team APOLLO | Dubai, UAE | 🇦🇪 |
-
+## 🧑‍💻 Team Introduction and Team Information
+div style="display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center; gap: 20px;">
+  <!-- Member Card -->
+  <div style="flex: 1 1 250px; max-width: 300px;">
+    <img src="https://via.placeholder.com/320x180.png?text=PRANAV+PHOTO" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;">
+    <div style="margin-top: 10px;">
+      <strong style="font-size: 1.2em;">PRANAV NAKKEERAN</strong><br>
+      <span style="font-weight: 600;">Lead Programmer</span><br>
+      <span style="font-size: 0.95em; color: #555;">Sensor Integration, Logic, Obstacle Avoidance</span>
+    </div>
+  </div>
+  <!-- Member Card -->
+  <div style="flex: 1 1 250px; max-width: 300px;">
+    <img src="https://via.placeholder.com/320x180.png?text=MIFZAL+PHOTO" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;">
+    <div style="margin-top: 10px;">
+      <strong style="font-size: 1.2em;">MOHAMED MIFZAL MAHAROOF</strong><br>
+      <span style="font-weight: 600;">Hardware Engineer</span><br>
+      <span style="font-size: 0.95em; color: #555;">Wiring, Circuit Design, Power Management</span>
+    </div>
+  </div>
+  <!-- Member Card -->
+  <div style="flex: 1 1 250px; max-width: 300px;">
+    <img src="https://via.placeholder.com/320x180.png?text=AARNAV+PHOTO" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;">
+    <div style="margin-top: 10px;">
+      <strong style="font-size: 1.2em;">AARNAV BHARGAVA</strong><br>
+      <span style="font-weight: 600;">Chief Strategist</span><br>
+      <span style="font-size: 0.95em; color: #555;">Planning, Analysis, Iteration, Strategy Making</span>
+    </div>
+  </div>
+</div>
 ---
 
 ## 🔍 Project Description
@@ -344,6 +365,17 @@ if (outerDist > SIDE_TURN_DISTANCE && outerDist < MAX_DISTANCE) {
 >	•	Edge Counting: Core mechanism to track progress across laps and corners.<br>
 > •	Laps Tracking: Uses a fixed TOTAL_EDGES = 13 to know when to stop.<br>
 > •	Autonomous Exit: Robot completes a routine and safely stops.
+---
+
+## 🎯 Competition Challenges
+### 🔗 Challenge Links
+- [OPEN CHALLENGE](https://youtu.be/91ZgfnIUOyQ)
+- [OBSTACLE CHALLENGE](https://youtu.be/91ZgfnIUOyQ)
+### 🎥 Open Challenge Round
+[![Watch Open Round](https://img.youtube.com/vi/91ZgfnIUOyQ/0.jpg)](https://youtu.be/91ZgfnIUOyQ)
+### 🎥 Obstacle Challenge Round
+[![Watch Obstacle Round](https://img.youtube.com/vi/91ZgfnIUOyQ/0.jpg)](https://youtu.be/91ZgfnIUOyQ)
+
 ---
 
 ## Spoilers
