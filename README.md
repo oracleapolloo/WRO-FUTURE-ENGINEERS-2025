@@ -338,3 +338,8 @@ if (outerDist > SIDE_TURN_DISTANCE && outerDist < MAX_DISTANCE) {
 > •	Laps Tracking: Uses a fixed TOTAL_EDGES = 13 to know when to stop.<br>
 > •	Autonomous Exit: Robot completes a routine and safely stops.
 ---
+
+## Spoilers
+>We stuffed folded paper into weak spots for extra support — not fancy, but it worked. Structural engineering? Nah, just **origami armor** 💀.
+---
+
