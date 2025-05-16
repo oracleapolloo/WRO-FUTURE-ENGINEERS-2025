@@ -54,7 +54,7 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 
 ## 🔧 Hardware Used
 ### Ultrasonic Sensors (3x HC-SR04)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/HC-SR04.jpeg" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/other/HC-SR04.jpeg" width="275" align="right" style="margin-left: 20px;" />
 >We selected the HC-SR04 because it is:
 >- **Lightweight and low-cost**
 >- **Easy to interface** with Arduino (using digital I/O pins)
@@ -68,7 +68,7 @@ In software, we use filtered readings from the sensors to smooth out noise. When
 <div style="clear: both;"></div><br>
 
 ### 🔄 MG90s Servo Motor (180 Degrees)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/MG90S.JPG" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/other/MG90S.JPG" width="275" align="right" style="margin-left: 20px;" />
 >Why we chose MG90s:
 >- **180° rotation** for full turning flexibility
 >- **Metal gear construction** for durability
@@ -86,7 +86,7 @@ This motor ensures smooth, consistent directional control, improving the robot�
 <div style="clear: both;"></div><br>
 
 ### ⚙️ LEGO EV3 Medium Servo Motor (45503)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/45503.jpeg" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/other/45503.jpeg" width="275" align="right" style="margin-left: 20px;" />
 >Why we chose the LEGO EV3 Medium Motor:
 >- **High torque** with compact design
 >- **Precise speed control** using encoders
@@ -104,7 +104,7 @@ Its combination of control precision, power efficiency, and mechanical robustnes
 <div style="clear: both;"></div><br>
 
 ### ⚡ L298N Motor Driver
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/L298N.jpg" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/other/L298N.jpg" width="275" align="right" style="margin-left: 20px;" />
 >Why we chose L298N:
 >- **Dual H-bridge** control for 2 motors
 >- **PWM speed control** via Arduino
@@ -122,7 +122,7 @@ The L298N gave us the flexibility and power needed to drive the robot consistent
 <div style="clear: both;"></div><br>
 
 ### 🧠 Arduino Uno (ATmega328P)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/Arduino%20UNO.jpeg" width="275" align="right" style="margin-left: 20px;"/>
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/other/Arduino%20UNO.jpeg" width="275" align="right" style="margin-left: 20px;"/>
 >Key reasons we chose the Arduino Uno:
 >- **Compatibility** with all components used (e.g., HC-SR04, MPU6050, HuskyLens)
 >- **Stable power management** via Vin (accepts 9–12V from battery pack)
@@ -137,7 +137,7 @@ The Uno is powered from the 11.1V battery pack via the **Vin pin**, and shares a
 <div style="clear: both;"></div><br>
 
 ### 📐 GY-521 (MPU6050) – Accelerometer and Gyroscope
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/GY-521.JPG" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/other/GY-521.JPG" width="275" align="right" style="margin-left: 20px;" />
 >Why we chose the MPU6050:
 >- **Compact and lightweight** form factor
 >- **I2C communication** for easy integration with Arduino
@@ -154,7 +154,7 @@ Its reliability and precision made it ideal for core navigation and turn-based l
 <div style="clear: both;"></div><br>
 
 ### 🧠 PixyCam (Vision Sensor)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/0b1f70f46a6ff36175dcef741f1111cefb1925e2/PixyCam.JPG" width="275" align="right" style="margin-left: 20px;"/>
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/0b1f70f46a6ff36175dcef741f1111cefb1925e2/other/PixyCam.JPG" width="275" align="right" style="margin-left: 20px;"/>
 > Key reasons we chose PixyCam:  
 > - **Real-time color-based object tracking**  
 > - **Fast onboard image processing**  
@@ -171,7 +171,7 @@ This sensor plays a vital role in giving our robot vision-based decision-making,
 <div style="clear: both;"></div><br>
 
 ### 🔋 Power Supply (3x 18650 Battery Pack)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/0b1f70f46a6ff36175dcef741f1111cefb1925e2/18650.jpg" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/925b963f555168b780b46e221f96b3fa813c4e4c/other/18650.jpg" width="275" align="right" style="margin-left: 20px;" />
 > Why we chose this power system:  
 > - **Compact & modular** battery solution  
 > - **Ideal voltage** for Arduino & L298N  
@@ -189,7 +189,7 @@ This configuration ensures sufficient voltage and current to support multiple se
 <div style="clear: both;"></div><br>
 
 ### 🧱 Custom 3D Printed Components
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/0b1f70f46a6ff36175dcef741f1111cefb1925e2/3D-Printed%20Bot.jpg" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/0b1f70f46a6ff36175dcef741f1111cefb1925e2/other/3D-Printed%20Bot.jpg" width="275" align="right" style="margin-left: 20px;" />
 > Why we 3D printed select parts:  
 > - **Precise mounting** for key modules  
 > - **Improved center of gravity** for balance  
