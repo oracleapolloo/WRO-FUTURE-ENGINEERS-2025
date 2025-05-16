@@ -53,7 +53,7 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 ---
 
 ## 🔧 Hardware Used
-### Ultrasonic Sensors (HC-SR04)
+### Ultrasonic Sensors (3x HC-SR04)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/16cbb89cfbd837ee0302bcbbc3ca747e88bd4775/HC-SR04.jpeg" width="275" align="right" style="margin-left: 20px;" />
 >We selected the HC-SR04 because it is:
 >- **Lightweight and low-cost**
