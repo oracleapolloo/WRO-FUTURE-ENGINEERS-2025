@@ -154,7 +154,7 @@ Its reliability and precision made it ideal for core navigation and turn-based l
 <div style="clear: both;"></div><br>
 
 ### 🧠 PixyCam (Vision Sensor)
-<img src="https://via.placeholder.com/275x180.png?text=PixyCam+Image" width="275" align="right" style="margin-left: 20px;"/>
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/0b1f70f46a6ff36175dcef741f1111cefb1925e2/PixyCam.JPG" width="275" align="right" style="margin-left: 20px;"/>
 > Key reasons we chose PixyCam:  
 > - **Real-time color-based object tracking**  
 > - **Fast onboard image processing**  
@@ -171,7 +171,7 @@ This sensor plays a vital role in giving our robot vision-based decision-making,
 <div style="clear: both;"></div><br>
 
 ### 🔋 Power Supply (3x 18650 Battery Pack)
-<img src="https://via.placeholder.com/275x180.png?text=Power+Supply+Image" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/0b1f70f46a6ff36175dcef741f1111cefb1925e2/18650.jpg" width="275" align="right" style="margin-left: 20px;" />
 > Why we chose this power system:  
 > - **Compact & modular** battery solution  
 > - **Ideal voltage** for Arduino & L298N  
@@ -189,7 +189,7 @@ This configuration ensures sufficient voltage and current to support multiple se
 <div style="clear: both;"></div><br>
 
 ### 🧱 Custom 3D Printed Components
-<img src="https://via.placeholder.com/275x180.png?text=3D+Printed+Parts+Image" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/0b1f70f46a6ff36175dcef741f1111cefb1925e2/3D-Printed%20Bot.jpg" width="275" align="right" style="margin-left: 20px;" />
 > Why we 3D printed select parts:  
 > - **Precise mounting** for key modules  
 > - **Improved center of gravity** for balance  
