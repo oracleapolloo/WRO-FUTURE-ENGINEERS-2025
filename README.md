@@ -153,21 +153,21 @@ The accelerometer complements the gyro by confirming orientation changes, especi
 Its reliability and precision made it ideal for core navigation and turn-based logic across varying field conditions.
 <div style="clear: both;"></div><br>
 
-### 🧠 HuskyLens (AI Vision Sensor)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/HUSKYLENS.jpg" width="275" align="right" style="margin-left: 20px;"/>
->Key reasons we chose HuskyLens:
->- **One-click training** for multiple vision modes
->- **Live visual feedback** on the sensor’s screen
->- **Fast onboard AI** (no internet/cloud required)
->- **Easy integration** over serial communication (UART)
+### 🧠 PixyCam (Vision Sensor)
+<img src="https://via.placeholder.com/275x180.png?text=PixyCam+Image" width="275" align="right" style="margin-left: 20px;"/>
+> Key reasons we chose PixyCam:  
+> - **Real-time color-based object tracking**  
+> - **Fast onboard image processing**  
+> - **Reliable detection of multiple objects simultaneously**  
+> - **Simple integration** over serial communication (UART/SPI)  
 
-HuskyLens is an AI-powered vision sensor capable of object detection, face recognition, color recognition, line following, and tag scanning. It features onboard machine learning with a built-in display, enabling training and testing without a PC.
+PixyCam is a compact, intelligent vision sensor designed for recognizing and tracking objects based on color signatures. It features a built-in image processor that eliminates the need for external computation, allowing it to detect and follow objects in real time.
 
-In our robot, HuskyLens is used for real-time object detection and line following during visual challenges. We trained it to recognize specific object shapes and colored markers placed on the field. Based on visual input, the Arduino adjusts movement, such as switching direction or triggering obstacle routines.
+In our robot, PixyCam is used during visual challenges to identify and react to colored markers on the field. These color signatures correspond to specific actions like turning, stopping, or path selection. The sensor sends coordinates, color signature IDs, and size data to the Arduino, which then determines the appropriate response.
 
-HuskyLens was selected for its simplicity, standalone learning capability, and ability to integrate seamlessly with Arduino via UART. The onboard interface allowed us to re-train and test directly in the field with no coding changes.
+We chose PixyCam because of its fast processing speed, ease of training, and ability to detect multiple color objects simultaneously. It offers a plug-and-play solution for computer vision in embedded systems, and it integrates cleanly with Arduino via UART or SPI.
 
-This sensor acts as the robot’s "vision brain" for intelligent decisions based on visual patterns and object proximity.
+This sensor plays a vital role in giving our robot vision-based decision-making, improving its interaction with dynamic environments and challenge-specific elements.
 <div style="clear: both;"></div><br>
 
 ### 🔋 Power Supply (3x 18650 Battery Pack)
