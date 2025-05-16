@@ -10,10 +10,10 @@
 * `t-photos` – Contains 2 team photos: one official and one funny group pic 😄  
 * `v-photos` – Includes 6 vehicle images: top, bottom, front, back, left, and right  
 * `video` – Holds `video.md` with a link to the driving demonstration  
-* `schemes` – Schematic diagrams (JPG, PNG, or PDF) showing the wiring and electromechanical connections  
+* `schemes` – Contains a PDF file showing the full documentation, wiring, and electromechanical schematics of the robot setup.
 * `src` – Full source code for all control components used in the competition  
-* `models` – 3D print, laser-cut, or CNC-ready model files (remove if unused)  
-* `other` – Any additional helpful docs: SBC upload instructions, specs, datasets, protocols (remove if unused)  
+* `models` – Contains all STL files required for 3D printing the custom components used in the robot. 
+* `other` – Contains all other supporting files, including resources used for the creation of this `README.md` and overall documentation. 
 ---
 
 ## 📌 Table of Contents
