@@ -205,6 +205,7 @@ We designed these parts in Fusion 360 and printed them using PLA. Their low weig
 
 This hybrid approach — using both prefabricated and 3D printed parts — gave us more flexibility to prototype and adapt on the fly while keeping the build structurally sound and competition-ready.
 <div style="clear: both;"></div><br>
+
 ---
 
 ## 💻 Software & Libraries
