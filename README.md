@@ -153,7 +153,7 @@ The accelerometer complements the gyro by confirming orientation changes, especi
 Its reliability and precision made it ideal for core navigation and turn-based logic across varying field conditions.
 <div style="clear: both;"></div><br>
 
-### 🧠Pixycam V2 
+### 🧠 HuskyLens (AI Vision Sensor)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/ebe5537ec565bc29764578a813cd18a58e606ea6/HUSKYLENS.jpg" width="275" align="right" style="margin-left: 20px;"/>
 >Key reasons we chose HuskyLens:
 >- **One-click training** for multiple vision modes
@@ -161,7 +161,7 @@ Its reliability and precision made it ideal for core navigation and turn-based l
 >- **Fast onboard AI** (no internet/cloud required)
 >- **Easy integration** over serial communication (UART)
 
-Pixycam v2 is an AI-powered vision sensor capable of object detection, face recognition, color recognition, line following, and tag scanning. It features onboard machine learning with a built-in display, enabling training and testing without a PC.
+HuskyLens is an AI-powered vision sensor capable of object detection, face recognition, color recognition, line following, and tag scanning. It features onboard machine learning with a built-in display, enabling training and testing without a PC.
 
 In our robot, HuskyLens is used for real-time object detection and line following during visual challenges. We trained it to recognize specific object shapes and colored markers placed on the field. Based on visual input, the Arduino adjusts movement, such as switching direction or triggering obstacle routines.
 
@@ -171,21 +171,39 @@ This sensor acts as the robot’s "vision brain" for intelligent decisions based
 <div style="clear: both;"></div><br>
 
 ### 🔋 Power Supply (3x 18650 Battery Pack)
-The robot is powered using **three 18650 lithium-ion batteries** connected in series, giving a total of approximately **11.1V**.
+<img src="https://via.placeholder.com/275x180.png?text=Power+Supply+Image" width="275" align="right" style="margin-left: 20px;" />
+> Why we chose this power system:  
+> - **Compact & modular** battery solution  
+> - **Ideal voltage** for Arduino & L298N  
+> - **Stable performance** during full operation  
+> - **Rechargeable & easily replaceable**  
+> - **Ensures consistent current delivery**
 
-- The **Arduino** is powered via its **Vin pin**, accepting 9–12V input.
-- The **L298N** draws power from the same source and drives the EV3 motors.
-- A **common ground** is maintained across all components for signal stability.
+The robot is powered using three **18650 lithium-ion batteries** connected in series, providing approximately **11.1V** total output. This configuration offers a high energy-to-weight ratio, making it well-suited for mobile robotics.
 
-This setup provides enough voltage and current to power all modules simultaneously without voltage drops or overheating issues.
+The Arduino Uno is powered via its **Vin pin**, which supports 9–12V input safely. The same battery pack also powers the L298N motor driver, which controls the LEGO EV3 drive motors. By centralizing power, we ensured reduced cable clutter and better weight distribution.
+
+All components—motors, sensors, Arduino, and drivers—share a **common ground** to maintain stable reference voltage and avoid communication issues.
+
+This configuration ensures sufficient voltage and current to support multiple sensors, servo movement, and motor driving without significant drops or overheating, even during peak loads.
 <div style="clear: both;"></div><br>
 
-### 🧱 Custom 3D Printed Chassis
-The robot’s body was custom-designed using Fusion 360 and 3D printed using PLA material. It features compartments and mounting slots for all components including the Arduino, L298N, sensors, and battery pack.
+### 🧱 Custom 3D Printed Components
+<img src="https://via.placeholder.com/275x180.png?text=3D+Printed+Parts+Image" width="275" align="right" style="margin-left: 20px;" />
+> Why we 3D printed select parts:  
+> - **Precise mounting** for key modules  
+> - **Improved center of gravity** for balance  
+> - **Modular design** for repairs or upgrades  
+> - **Custom fit** for sensors like MPU6050  
+> - **Enhanced wiring and airflow**
 
-Designing the chassis in-house allowed us to create a compact, structurally balanced frame optimized for center of gravity and accessibility during repairs. This helped reduce weight and simplified wiring.
+While our robot’s main frame is built using traditional mounting plates and brackets, we 3D printed specific parts to enhance layout, fit, and function. These include the **gyroscope (MPU6050) base**, **sensor holders**, and **Arduino standoffs**.
 
-The body was printed in multiple parts and assembled using screws, with space allocated for airflow, cable routing, and sensor field-of-view.
+A critical use of 3D printing was to correctly position the MPU6050 at the **robot's center of gravity**, minimizing rotational noise and improving PID accuracy. This helped the gyroscope give more stable yaw values, especially during turns.
+
+We designed these parts in Fusion 360 and printed them using PLA. Their low weight and custom dimensions allowed seamless integration into the chassis without affecting balance or wiring complexity.
+
+This hybrid approach — using both prefabricated and 3D printed parts — gave us more flexibility to prototype and adapt on the fly while keeping the build structurally sound and competition-ready.
 <div style="clear: both;"></div><br>
 ---
 
