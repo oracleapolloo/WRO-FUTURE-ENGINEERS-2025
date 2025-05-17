@@ -29,11 +29,13 @@
   
 ---
 
+<a name="overview"></a>
 ## 🚙 Overview
 This self-driving vehicle prototype, developed for the WRO Future Engineers 2025 competition, is a fully autonomous system combining real-time decision-making with a compact and modular hardware layout. It features a PixyCam for object and color-based vision tracking, an MPU6050 (GY-521) IMU for orientation sensing and drift correction, and three HC-SR04 ultrasonic sensors for obstacle detection, wall following, and collision prevention. The robot’s behavior is governed by a combination of PID control, filtered sensor data, and logic-based navigation, allowing it to maintain center alignment and adapt smoothly to changing track environments. Its structure includes prefabricated parts alongside custom 3D-printed mounts, optimized for precise sensor placement and clean wiring. Power is delivered via an 11.1V lithium-ion battery pack using three 18650 cells. The entire system is programmed using Arduino, with modules communicating through PWM, UART, and I²C protocols to coordinate steering, sensors, and motor control. Altogether, this vehicle presents a robust and competition-ready platform that brings together mechanical design, embedded control systems, and smart autonomous behavior.
 
 ---
 
+<a name="team-introduction"></a>
 ## 🧑‍💻 Team Introduction & Team Information
 <table>
   <tr>
@@ -60,6 +62,7 @@ This self-driving vehicle prototype, developed for the WRO Future Engineers 2025
 
 ---
 
+<a name="project-description"></a>
 ## 🔍 Project Description
 
 ### 💡 Problem Statement
@@ -73,6 +76,7 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 
 ---
 
+<a name="hardware-used"></a>
 ## 🔧 Hardware Used
 
 ### Ultrasonic Sensors (3x HC-SR04)
@@ -239,6 +243,7 @@ This hybrid approach — using both prefabricated and 3D printed parts — gave 
 
 ---
 
+<a name="software--libraries"></a>
 ## 💻 Software & Libraries
 
 ### Tools:
@@ -360,6 +365,7 @@ if (outerDist > SIDE_TURN_DISTANCE && outerDist < MAX_DISTANCE) {
 > •	Autonomous Exit: Robot completes a routine and safely stops.
 ---
 
+<a name="competition-challenges"></a>
 ## 🎯 Competition Challenges
 <table>
   <tr>
@@ -382,6 +388,7 @@ if (outerDist > SIDE_TURN_DISTANCE && outerDist < MAX_DISTANCE) {
 
 ---
 
+<a name="spoilers"></a>
 ## Spoilers
 >We stuffed folded paper into weak spots for extra support — not fancy, but it worked. Structural engineering? Nah, just **origami armor** 💀.
 ---
