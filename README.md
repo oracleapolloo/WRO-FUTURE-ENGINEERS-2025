@@ -13,7 +13,8 @@
 * `schemes` – Contains a PDF file showing the full documentation, wiring, and electromechanical schematics of the robot setup.
 * `src` – Full source code for all control components used in the competition  
 * `models` – Contains all STL files required for 3D printing the custom components used in the robot. 
-* `other` – Contains all other supporting files, including resources used for the creation of this `README.md` and overall documentation. 
+* `other` – Contains all other supporting files, including resources used for the creation of this `README.md` and overall documentation.
+* `obstacle challenge & open challenge` – Includes the complete codebase for both challenges.
 ---
 
 ## 📌 Table of Contents
