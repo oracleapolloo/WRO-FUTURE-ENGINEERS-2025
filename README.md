@@ -36,7 +36,7 @@ This self-driving vehicle prototype, developed for the WRO Future Engineers 2025
 
 ---
 
-## 🧑‍💻 Team Introduction and Team Information
+## 🧑‍💻 Team Introduction & Team Information
 <table>
   <tr>
     <td align="center" width="33%">
