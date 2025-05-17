@@ -20,15 +20,13 @@
 ## 📌 Table of Contents
 
 - [Overview](#overview)  
-- [Team Information](#team-information)  
+- [Team Introduction & Team Information](#team-introduction--team-information)  
 - [Project Description](#project-description)  
-- [Hardware Used](#-hardware-used)  
+- [Hardware Used](#hardware-used)  
 - [Software & Libraries](#software--libraries)  
-- [Code Explanation](#code-explanation)  
-- [Challenges & Solutions](#challenges--solutions)  
-- [Demo / Images](#demo--images)  
-- [Content Structure](#content-structure)
-
+- [Competition Challenges](#competition-challenges)  
+- [Spoilers](#spoilers)
+  
 ---
 
 ## 🚙 Overview
