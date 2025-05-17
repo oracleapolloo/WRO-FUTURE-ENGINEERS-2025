@@ -36,35 +36,29 @@ This self-driving vehicle prototype, developed for the WRO Future Engineers 2025
 ---
 
 ## 🧑‍💻 Team Introduction and Team Information
-div style="display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center; gap: 20px;">
-  <!-- Member Card -->
-  <div style="flex: 1 1 250px; max-width: 300px;">
-    <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/d02ef5504a3baa63b37da2d55a1e29b3d79bb3eb/other/pranav%20pic%20wro%20crop.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;">
-    <div style="margin-top: 10px;">
-      <strong style="font-size: 1.2em;">PRANAV NAKKEERAN</strong><br>
-      <span style="font-weight: 600;">Lead Programmer</span><br>
-      <span style="font-size: 0.95em; color: #555;">Sensor Integration, Logic, Obstacle Avoidance</span>
-    </div>
-  </div>
-  <!-- Member Card -->
-  <div style="flex: 1 1 250px; max-width: 300px;">
-    <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/d02ef5504a3baa63b37da2d55a1e29b3d79bb3eb/other/mifzal%20pic%20wro%20crop.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;">
-    <div style="margin-top: 10px;">
-      <strong style="font-size: 1.2em;">MOHAMED MIFZAL MAHAROOF</strong><br>
-      <span style="font-weight: 600;">Hardware Engineer</span><br>
-      <span style="font-size: 0.95em; color: #555;">Wiring, Circuit Design, Power Management</span>
-    </div>
-  </div>
-  <!-- Member Card -->
-  <div style="flex: 1 1 250px; max-width: 300px;">
-    <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/d02ef5504a3baa63b37da2d55a1e29b3d79bb3eb/other/aarnav%20pic%20wro%20crop.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px;">
-    <div style="margin-top: 10px;">
-      <strong style="font-size: 1.2em;">AARNAV BHARGAVA</strong><br>
-      <span style="font-weight: 600;">Chief Strategist</span><br>
-      <span style="font-size: 0.95em; color: #555;">Planning, Analysis, Iteration, Strategy Making</span>
-    </div>
-  </div>
-</div>
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/d02ef5504a3baa63b37da2d55a1e29b3d79bb3eb/other/pranav%20pic%20wro%20crop.jpg?raw=true" width="100%" style="border-radius: 8px;"><br>
+      <strong>PRANAV NAKKEERAN</strong><br>
+      <em>Lead Programmer</em><br>
+      <sub>Sensor Integration, Logic, Obstacle Avoidance</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/d02ef5504a3baa63b37da2d55a1e29b3d79bb3eb/other/mifzal%20pic%20wro%20crop.jpg?raw=true" width="100%" style="border-radius: 8px;"><br>
+      <strong>MOHAMED MIFZAL MAHAROOF</strong><br>
+      <em>Hardware Engineer</em><br>
+      <sub>Wiring, Circuit Design, Power Management</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/d02ef5504a3baa63b37da2d55a1e29b3d79bb3eb/other/aarnav%20pic%20wro%20crop.jpg?raw=true" width="100%" style="border-radius: 8px;"><br>
+      <strong>AARNAV BHARGAVA</strong><br>
+      <em>Chief Strategist</em><br>
+      <sub>Planning, Analysis, Iteration, Strategy Making</sub>
+    </td>
+  </tr>
+</table>
+
 ---
 
 ## 🔍 Project Description
