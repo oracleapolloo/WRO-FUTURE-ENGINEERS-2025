@@ -363,13 +363,24 @@ if (outerDist > SIDE_TURN_DISTANCE && outerDist < MAX_DISTANCE) {
 ---
 
 ## 🎯 Competition Challenges
-### 🔗 Challenge Links
-- [OPEN CHALLENGE](https://youtu.be/91ZgfnIUOyQ)
-- [OBSTACLE CHALLENGE](https://youtu.be/91ZgfnIUOyQ)
-### 🎥 Open Challenge Round
-[![Watch Open Round](https://img.youtube.com/vi/91ZgfnIUOyQ/0.jpg)](https://youtu.be/91ZgfnIUOyQ)
-### 🎥 Obstacle Challenge Round
-[![Watch Obstacle Round](https://img.youtube.com/vi/91ZgfnIUOyQ/0.jpg)](https://youtu.be/91ZgfnIUOyQ)
+<table>
+  <tr>
+    <td width="49%" align="center">
+      <h3>🔗 Open Challenge</h3>
+      <a href="https://youtu.be/91ZgfnIUOyQ">
+        <img src="https://img.youtube.com/vi/91ZgfnIUOyQ/0.jpg" width="100%" style="border-radius: 8px;" />
+      </a>
+      <p><a href="https://youtu.be/91ZgfnIUOyQ">Watch Open Challenge Round</a></p>
+    </td>
+    <td width="49%" align="center">
+      <h3>🔗 Obstacle Challenge</h3>
+      <a href="https://youtu.be/91ZgfnIUOyQ">
+        <img src="https://img.youtube.com/vi/91ZgfnIUOyQ/0.jpg" width="100%" style="border-radius: 8px;" />
+      </a>
+      <p><a href="https://youtu.be/91ZgfnIUOyQ">Watch Obstacle Challenge Round</a></p>
+    </td>
+  </tr>
+</table>
 
 ---
 
