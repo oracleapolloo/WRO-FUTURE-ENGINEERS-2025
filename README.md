@@ -378,10 +378,10 @@ if (outerDist > SIDE_TURN_DISTANCE && outerDist < MAX_DISTANCE) {
     </td>
     <td width="49%" align="center">
       <h3>🔗 Obstacle Challenge</h3>
-      <a href="https://youtu.be/91ZgfnIUOyQ">
-        <img src="https://img.youtube.com/vi/91ZgfnIUOyQ/0.jpg" width="100%" style="border-radius: 8px;" />
+      <a href="https://youtu.be/WTx0oLnZWhM">
+        <img src="https://img.youtube.com/vi/WTx0oLnZWhM/0.jpg" width="100%" style="border-radius: 8px;" />
       </a>
-      <p><a href="https://youtu.be/91ZgfnIUOyQ">Watch Obstacle Challenge Round</a></p>
+      <p><a href="https://youtu.be/WTx0oLnZWhM">Watch Obstacle Challenge Round</a></p>
     </td>
   </tr>
 </table>
