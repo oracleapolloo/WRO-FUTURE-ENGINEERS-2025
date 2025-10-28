@@ -248,7 +248,7 @@ This hybrid approach — using both prefabricated and 3D printed parts — gave 
 
 ### Tools:
 - Arduino IDE
-- PixyCam firmware & software
+- LimeLight firmware & software
 
 ### getFilteredDistance():
 #### Reliable Sensor Reading
