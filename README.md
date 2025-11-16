@@ -42,8 +42,8 @@ This self-driving vehicle prototype, developed for the WRO Future Engineers 2025
     <td align="center" width="33%">
       <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/d02ef5504a3baa63b37da2d55a1e29b3d79bb3eb/other/pranav%20pic%20wro%20crop.jpg?raw=true" width="100%" style="border-radius: 8px;"><br>
       <strong>PRANAV NAKKEERAN</strong><br>
-      <em>Lead Programmer</em><br>
-      <sub>Sensor Integration, Logic, Obstacle Avoidance</sub>
+      <em>Chief Strategist</em><br>
+      <sub>Planning, Analysis, Iteration, Strategy Making</sub>
     </td>
     <td align="center" width="33%">
       <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/d02ef5504a3baa63b37da2d55a1e29b3d79bb3eb/other/mifzal%20pic%20wro%20crop.jpg?raw=true" width="100%" style="border-radius: 8px;"><br>
@@ -54,8 +54,8 @@ This self-driving vehicle prototype, developed for the WRO Future Engineers 2025
     <td align="center" width="33%">
       <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/d02ef5504a3baa63b37da2d55a1e29b3d79bb3eb/other/aarnav%20pic%20wro%20crop.jpg?raw=true" width="100%" style="border-radius: 8px;"><br>
       <strong>AARNAV BHARGAVA</strong><br>
-      <em>Chief Strategist</em><br>
-      <sub>Planning, Analysis, Iteration, Strategy Making</sub>
+      <em>Lead Programmer</em><br>
+      <sub>Sensor Integration, Logic, Obstacle Avoidance</sub>
     </td>
   </tr>
 </table>
