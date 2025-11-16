@@ -5,7 +5,6 @@
   
   > An autonomous vehicle designed for the Future Engineers category of the WRO 2025 that uses computer vision and IMU sensors to navigate complex environments and avoid obstacles intelligently.
 ---
----
   
 ## 📁 Content Structure
 * `t-photos` – Contains an official team photo and several funny group pics for the vibes 😄  
@@ -392,5 +391,4 @@ if (outerDist > SIDE_TURN_DISTANCE && outerDist < MAX_DISTANCE) {
 <a name="spoilers"></a>
 ## Spoilers
 >We stuffed folded paper into weak spots for extra support — not fancy, but it worked. Structural engineering? Nah, just **origami armor** 💀.
----
 ---
