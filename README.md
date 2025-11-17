@@ -83,7 +83,7 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 ## 🔧 Hardware Used
 
 ### REV Robotics 2m Distance Sensors (3x)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/HC-SR04.jpeg" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/2m%20Distance%20Sensors.png" width="275" align="right" style="margin-left: 20px;" />
 
 We selected the REV Robotics 2m Distance Sensor because it is:  
 > - **Highly accurate** with ±1cm precision  
