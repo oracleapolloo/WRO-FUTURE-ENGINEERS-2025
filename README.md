@@ -146,7 +146,7 @@ The combination of high torque, precision feedback, and durability made the Neve
 <div style="clear: both;"></div><br>
 
 ### ⚡ BTS7960 High-Current Motor Driver
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/other/ BTS7960.jpg" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/22721c2a993cc536da789fa8a96c43088dfe4141/other/%20BTS7960.jpg" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose BTS7960:
 >- **High current capacity** up to 43A continuous
@@ -229,7 +229,7 @@ The combination of sophisticated sensor fusion, absolute heading reference, auto
 <div style="clear: both;"></div><br>
 
 ### 🧠 Limelight 3A - Advanced Vision Sensor
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/limelight3a.jpg" width="275" align="right" style="margin-left: 20px;"/>
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/22721c2a993cc536da789fa8a96c43088dfe4141/other/limelight3a.jpg" width="275" align="right" style="margin-left: 20px;"/>
 
 Key reasons we chose Limelight 3A:  
 > - **Neural network processing** with Google Coral TPU  
