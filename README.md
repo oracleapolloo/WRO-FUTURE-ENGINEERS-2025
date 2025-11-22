@@ -83,7 +83,7 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 ## 🔧 Hardware Used
 
 ### REV Robotics 2m Distance Sensors (3x)
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/2m%20Distance%20Sensors.png" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m Distance Sensors.webp" width="275" align="right" style="margin-left: 20px;" />
 
 We selected the REV Robotics 2m Distance Sensor because it is:  
 > - **Highly accurate** with ±1cm precision  
@@ -100,7 +100,7 @@ In software, we utilize the sensors' built-in filtering capabilities and I²C co
 <div style="clear: both;"></div><br>
 
 ### 🔄 Axon MICRO+ Servo Motor
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/MG90S.JPG" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/Axon MICRO Servo.gif" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose Axon MICRO+:
 >- **270° rotation range** for enhanced steering flexibility
@@ -122,7 +122,7 @@ This motor ensures rapid, consistent, and precise directional control, dramatica
 <div style="clear: both;"></div><br>
 
 ### ⚙️ AndyMark NeveRest Motor
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/45503.jpeg" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m Distance Sensors.webp" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose the AndyMark NeveRest:
 >- **High torque output** with multiple gear ratios available
@@ -146,7 +146,7 @@ The combination of high torque, precision feedback, and durability made the Neve
 <div style="clear: both;"></div><br>
 
 ### ⚡ BTS7960 High-Current Motor Driver
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/L298N.jpg" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m%20Distance%20Sensors.webp" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose BTS7960:
 >- **High current capacity** up to 43A continuous
@@ -170,7 +170,7 @@ The BTS7960's combination of high current handling, robust protection features, 
 <div style="clear: both;"></div><br>
 
 ### 🧠 Raspberry Pi 5 8GB - Main Controller
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/Arduino%20UNO.jpeg" width="275" align="right" style="margin-left: 20px;"/>
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m%20Distance%20Sensors.webp" width="275" align="right" style="margin-left: 20px;"/>
 
 Key reasons we chose the Raspberry Pi 5 8GB:
 >- **Quad-core ARM Cortex-A76 CPU** running at 2.4GHz
@@ -200,7 +200,7 @@ The Raspberry Pi 5's combination of processing power, memory capacity, connectiv
 <div style="clear: both;"></div><br>
 
 ### 📐 REV Robotics 9-Axis IMU – Inertial Measurement Unit
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/GY-521.JPG" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m%20Distance%20Sensors.webp" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose the REV Robotics 9-Axis IMU:
 >- **9-axis sensor fusion** (3-axis accelerometer, gyroscope, magnetometer)
@@ -229,7 +229,7 @@ The combination of sophisticated sensor fusion, absolute heading reference, auto
 <div style="clear: both;"></div><br>
 
 ### 🧠 Limelight 3A - Advanced Vision Sensor
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/PixyCam.JPG" width="275" align="right" style="margin-left: 20px;"/>
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m%20Distance%20Sensors.webp" width="275" align="right" style="margin-left: 20px;"/>
 
 Key reasons we chose Limelight 3A:  
 > - **Neural network processing** with Google Coral TPU  
