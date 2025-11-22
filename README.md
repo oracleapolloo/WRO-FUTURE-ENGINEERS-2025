@@ -122,7 +122,7 @@ This motor ensures rapid, consistent, and precise directional control, dramatica
 <div style="clear: both;"></div><br>
 
 ### ⚙️ AndyMark NeveRest Motor
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m Distance Sensors.webp" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/AM NeveRest Motor.png" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose the AndyMark NeveRest:
 >- **High torque output** with multiple gear ratios available
@@ -146,7 +146,7 @@ The combination of high torque, precision feedback, and durability made the Neve
 <div style="clear: both;"></div><br>
 
 ### ⚡ BTS7960 High-Current Motor Driver
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m%20Distance%20Sensors.webp" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/other/ BTS7960.jpg" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose BTS7960:
 >- **High current capacity** up to 43A continuous
@@ -170,7 +170,7 @@ The BTS7960's combination of high current handling, robust protection features, 
 <div style="clear: both;"></div><br>
 
 ### 🧠 Raspberry Pi 5 8GB - Main Controller
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m%20Distance%20Sensors.webp" width="275" align="right" style="margin-left: 20px;"/>
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/rPi5.jpg" width="275" align="right" style="margin-left: 20px;"/>
 
 Key reasons we chose the Raspberry Pi 5 8GB:
 >- **Quad-core ARM Cortex-A76 CPU** running at 2.4GHz
@@ -200,7 +200,7 @@ The Raspberry Pi 5's combination of processing power, memory capacity, connectiv
 <div style="clear: both;"></div><br>
 
 ### 📐 REV Robotics 9-Axis IMU – Inertial Measurement Unit
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m%20Distance%20Sensors.webp" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/REV Robotics 9-Axis IMU.webp" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose the REV Robotics 9-Axis IMU:
 >- **9-axis sensor fusion** (3-axis accelerometer, gyroscope, magnetometer)
@@ -229,7 +229,7 @@ The combination of sophisticated sensor fusion, absolute heading reference, auto
 <div style="clear: both;"></div><br>
 
 ### 🧠 Limelight 3A - Advanced Vision Sensor
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m%20Distance%20Sensors.webp" width="275" align="right" style="margin-left: 20px;"/>
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/limelight3a.jpg" width="275" align="right" style="margin-left: 20px;"/>
 
 Key reasons we chose Limelight 3A:  
 > - **Neural network processing** with Google Coral TPU  
