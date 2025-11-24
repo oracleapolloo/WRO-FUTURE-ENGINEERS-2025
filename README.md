@@ -759,7 +759,7 @@ We employ multiple Limelight vision pipelines: one for red detection, one for gr
 ---
 
 <a name="spoilers"></a>
-## 🎭 Spoilers
+##  Spoilers
 
 > We initially tried using AprilTags for absolute positioning, but the detection range was too limited at competition speeds. Switched to HSV color blob detection with dynamic threshold adjustment based on ambient lighting - **much more robust**. Turns out sometimes simpler is better 🎯.
 
@@ -777,7 +777,7 @@ We employ multiple Limelight vision pipelines: one for red detection, one for gr
 
 ---
 
-## 📞 Contact & Links
+##  Contact & Links
 
 - **GitHub Repository**: [WRO-FUTURE-ENGINEERS-2025](https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025)
 - **Team Email**: contact.teamapollo@gmail.com
@@ -785,7 +785,7 @@ We employ multiple Limelight vision pipelines: one for red detection, one for gr
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 Special thanks to:
 - Our mentors and coaches for guidance throughout development
@@ -795,7 +795,7 @@ Special thanks to:
 
 ---
 
-## 📜 License
+##  License
 
 This project is documented for educational purposes as part of the WRO 2025 competition. All custom code and designs are shared under MIT License for the benefit of the robotics community.
 
