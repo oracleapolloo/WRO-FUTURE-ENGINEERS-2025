@@ -7,7 +7,7 @@
 
 ---
   
-## 📁 Content Structure
+##  Content Structure
 * `t-photos` – Contains an official team photo and several funny group pics for the vibes 😄.  
 * `v-photos` – Includes 6 vehicle images: top, bottom, front, back, left, and right.  
 * `video` – Holds `video.md` with a link to the driving demonstration.  
@@ -19,7 +19,7 @@
 
 ---
 
-## 📌 Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)  
 - [Team Introduction & Team Information](#team-introduction--team-information)  
@@ -32,13 +32,13 @@
 ---
 
 <a name="overview"></a>
-## 🚙 Overview
+##  Overview
 This self-driving vehicle prototype, developed for the WRO Future Engineers 2025 competition, is a fully autonomous system combining real-time decision-making with a compact and modular hardware layout. It features a Limelight 3A for advanced object detection and color-based vision tracking, a REV Robotics 9-Axis IMU for precise orientation sensing and drift correction, and three REV Robotics 2m Distance Sensors for obstacle detection, wall following, and collision prevention. The robot's behavior is governed by a combination of PID control, filtered sensor data, and logic-based navigation, allowing it to maintain center alignment and adapt smoothly to changing track environments. Its structure includes prefabricated parts alongside custom 3D-printed mounts, optimized for precise sensor placement and clean wiring. Power is delivered via an 11.1V lithium-ion battery pack using three 18650 cells. The entire system is programmed using Python on Raspberry Pi 5, with modules communicating through PWM, UART, and I²C protocols to coordinate steering, sensors, and motor control. Altogether, this vehicle presents a robust and competition-ready platform that brings together mechanical design, embedded control systems, and smart autonomous behavior.
 
 ---
 
 <a name="team-introduction--team-information"></a>
-## 🧑‍💻 Team Introduction & Team Information
+##  Team Introduction & Team Information
 <table>
   <tr>
     <td align="center" width="33%">
@@ -66,12 +66,12 @@ This self-driving vehicle prototype, developed for the WRO Future Engineers 2025
 ---
 
 <a name="project-description"></a>
-## 🔍 Project Description
+##  Project Description
 
-### 💡 Problem Statement
+###  Problem Statement
 How can a robot dynamically avoid both visible and invisible obstacles in real-time using multi-sensor fusion and advanced vision processing?
 
-### 🎯 Goals
+###  Goals
 - Integrate AI vision with neural network processing for object detection.
 - Use 9-axis IMU data to stabilize motion and track orientation with high precision.
 - Implement ultrasonic-based distance awareness with improved accuracy.
@@ -81,7 +81,7 @@ How can a robot dynamically avoid both visible and invisible obstacles in real-t
 ---
 
 <a name="hardware-used"></a>
-## 🔧 Hardware Used
+## � Hardware Used
 
 ### REV Robotics 2m Distance Sensors (3x)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/2m Distance Sensors.webp" width="275" align="right" style="margin-left: 20px;" />
@@ -100,7 +100,7 @@ In our robot, we used **three REV Robotics Distance Sensors** — positioned at 
 In software, we utilize the sensors' built-in filtering capabilities and I²C communication protocol for rapid data acquisition. The extended range allows the robot to detect approaching obstacles sooner, giving more time for smooth trajectory adjustments. When the front sensor detects an obstacle, the system analyzes both side distances with high precision to determine the optimal turning direction, enhancing both safety and navigation efficiency.
 <div style="clear: both;"></div><br>
 
-### 🔄 Axon MICRO+ Servo Motor
+###  Axon MICRO+ Servo Motor
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/Axon MICRO Servo.gif" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose Axon MICRO+:
@@ -122,7 +122,7 @@ We selected this servo for its programmable features, allowing us to fine-tune e
 This motor ensures rapid, consistent, and precise directional control, dramatically improving the robot's agility and responsiveness in both obstacle-rich environments and open track sections while maintaining competitive speed.
 <div style="clear: both;"></div><br>
 
-### ⚙️ AndyMark NeveRest Motor
+###  AndyMark NeveRest Motor
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/AM NeveRest Motor.png" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose the AndyMark NeveRest:
@@ -146,7 +146,7 @@ The motor's planetary gearbox provides smooth, reliable power transmission with 
 The combination of high torque, precision feedback, and durability made the NeveRest motor the ideal choice for driving our competition robot through challenging courses while maintaining consistent performance across multiple autonomous runs.
 <div style="clear: both;"></div><br>
 
-### ⚡ BTS7960 High-Current Motor Driver
+###  BTS7960 High-Current Motor Driver
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/22721c2a993cc536da789fa8a96c43088dfe4141/other/%20BTS7960.jpg" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose BTS7960:
@@ -170,7 +170,7 @@ The driver's high PWM frequency capability (up to 25kHz) eliminates audible moto
 The BTS7960's combination of high current handling, robust protection features, and clean signal operation made it the essential choice for reliable, high-performance motor control in our competition-grade autonomous vehicle.
 <div style="clear: both;"></div><br>
 
-### 🧠 Raspberry Pi 5 8GB - Main Controller
+###  Raspberry Pi 5 8GB - Main Controller
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/rPi5.jpg" width="275" align="right" style="margin-left: 20px;"/>
 
 Key reasons we chose the Raspberry Pi 5 8GB:
@@ -200,7 +200,7 @@ Power management is handled efficiently, with the board drawing appropriate curr
 The Raspberry Pi 5's combination of processing power, memory capacity, connectivity options, and development ecosystem made it the natural choice for controlling our advanced competition robot, enabling implementation of sophisticated autonomous behaviors that were previously impractical on lower-powered platforms.
 <div style="clear: both;"></div><br>
 
-### 📐 REV Robotics 9-Axis IMU – Inertial Measurement Unit
+###  REV Robotics 9-Axis IMU – Inertial Measurement Unit
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/492bd3f4281136f59b33868263398c0b74ff2589/other/REV Robotics 9-Axis IMU.webp" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose the REV Robotics 9-Axis IMU:
@@ -229,7 +229,7 @@ The IMU's robust construction and industrial-grade components ensure reliable op
 The combination of sophisticated sensor fusion, absolute heading reference, automatic calibration, and reliable performance made the REV Robotics 9-Axis IMU the definitive choice for providing our robot with accurate, stable orientation data essential for precise autonomous navigation and smooth motion control.
 <div style="clear: both;"></div><br>
 
-### 🧠 Limelight 3A - Advanced Vision Sensor
+###  Limelight 3A - Advanced Vision Sensor
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/22721c2a993cc536da789fa8a96c43088dfe4141/other/limelight3a.jpg" width="275" align="right" style="margin-left: 20px;"/>
 
 Key reasons we chose Limelight 3A:  
@@ -261,7 +261,7 @@ The Limelight's 3D positioning capabilities are particularly valuable for comple
 The robust construction, industrial-grade camera sensor, and professional-level processing power made the Limelight 3A an essential component for giving our robot sophisticated visual perception capabilities. It transforms raw visual information into actionable navigation data, enabling intelligent decision-making and precise autonomous operation in dynamic competition environments.
 <div style="clear: both;"></div><br>
 
-### 🔋 Power Supply (3x 18650 Battery Pack)
+###  Power Supply (3x 18650 Battery Pack)
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/925b963f555168b780b46e221f96b3fa813c4e4c/other/18650.jpg" width="275" align="right" style="margin-left: 20px;" />
 
 Why we chose this power system:  
@@ -293,7 +293,7 @@ The modular nature of 18650 cells allows us to carry spare batteries and quickly
 This power system architecture provides reliable, stable, and sufficient electrical power to all robot subsystems while maintaining safety, weight efficiency, and operational flexibility essential for competitive autonomous robotics.
 <div style="clear: both;"></div><br>
 
-### 🧱 Custom 3D Printed Components
+###  Custom 3D Printed Components
 <img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3da194a875898bb9f4ca8a73f0e32c88261e2961/v-photos/left.jpeg" width="275" align="right" style="margin-left: 20px;" />
 
 Why we 3D printed select components:  
@@ -336,7 +336,7 @@ The modular nature of our printed components means we can quickly replace damage
 ---
 
 <a name="software--libraries"></a>
-## 💻 Software & Libraries
+##  Software & Libraries
 
 ### Development Environment:
 - **Python 3.11** - Primary programming language
@@ -716,18 +716,18 @@ def vision_assisted_approach():
   <tr>
     <td width="49%" align="center">
       <h3>🔗 Open Challenge</h3>
-      <a href="https://youtu.be/91ZgfnIUOyQ">
-        <img src="https://img.youtube.com/vi/91ZgfnIUOyQ/0.jpg" width="100%" style="border-radius: 8px;" />
+      <a href="https://www.youtube.com/watch?v=JMByIIizngU">
+        <img src="https://img.youtube.com/vi/JMByIIizngU/0.jpg" width="100%" style="border-radius: 8px;" />
       </a>
-      <p><a href="https://youtu.be/91ZgfnIUOyQ">Watch Open Challenge Round</a></p>
+      <p><a href="https://www.youtube.com/watch?v=JMByIIizngU">Watch Open Challenge Round</a></p>
       <p><em>Autonomous navigation using IMU and distance sensors for lap completion and precision parking</em></p>
     </td>
     <td width="49%" align="center">
       <h3>🔗 Obstacle Challenge</h3>
-      <a href="https://youtu.be/WTx0oLnZWhM">
-        <img src="https://img.youtube.com/vi/WTx0oLnZWhM/0.jpg" width="100%" style="border-radius: 8px;" />
+      <a href="https://www.youtube.com/watch?v=UUE0Nfv7lps">
+        <img src="https://img.youtube.com/vi/UUE0Nfv7lps/0.jpg" width="100%" style="border-radius: 8px;" />
       </a>
-      <p><a href="https://youtu.be/WTx0oLnZWhM">Watch Obstacle Challenge Round</a></p>
+      <p><a href="https://www.youtube.com/watch?v=UUE0Nfv7lps">Watch Obstacle Challenge Round</a></p>
       <p><em>Vision-based obstacle detection and avoidance with dynamic path planning</em></p>
     </td>
   </tr>
