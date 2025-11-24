@@ -294,7 +294,7 @@ This power system architecture provides reliable, stable, and sufficient electri
 <div style="clear: both;"></div><br>
 
 ### 🧱 Custom 3D Printed Components
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3d21aa61965569ea2f02e8448cfda0d1e4c31245/other/3D-Printed%20Bot.jpg" width="275" align="right" style="margin-left: 20px;" />
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3da194a875898bb9f4ca8a73f0e32c88261e2961/v-photos/left.jpeg" width="275" align="right" style="margin-left: 20px;" />
 
 Why we 3D printed select components:  
 > - **Precise sensor mounting** with designed alignment features  
