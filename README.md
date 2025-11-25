@@ -95,9 +95,14 @@ We selected the REV Robotics 2m Distance Sensor because it is:
 
 The REV Robotics 2m Distance Sensor uses Time-of-Flight (ToF) technology to measure distances with exceptional accuracy. Unlike traditional ultrasonic sensors, these ToF sensors emit infrared light pulses and calculate distance based on the time taken for light to reflect back, resulting in more precise and reliable measurements even in challenging lighting conditions.
 
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/c6e12ae4dd6d77f7cab4d64d463302ed16cd73d5/other/Screenshot%202025-11-25%20at%2019.08.25.png" width="300" align="left" style="margin-left: 20px;"/>
+
 In our robot, we used **three REV Robotics Distance Sensors** — positioned at the front, left, and right. The front sensor provides **advanced collision avoidance**, detecting obstacles up to 2 meters away and allowing the robot to plan turns earlier. The side sensors handle **precision wall tracking and edge navigation**, maintaining optimal distance from boundaries while enabling intelligent turning decisions with millimeter-level accuracy.
 
 In software, we utilize the sensors' built-in filtering capabilities and I²C communication protocol for rapid data acquisition. The extended range allows the robot to detect approaching obstacles sooner, giving more time for smooth trajectory adjustments. When the front sensor detects an obstacle, the system analyzes both side distances with high precision to determine the optimal turning direction, enhancing both safety and navigation efficiency.
+
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/c6e12ae4dd6d77f7cab4d64d463302ed16cd73d5/other/Screenshot%202025-11-25%20at%2019.09.17.png" align="centre" style="margin-left: 20px;"/>
+
 <div style="clear: both;"></div><br>
 
 ###  Axon MICRO+ Servo Motor
@@ -250,7 +255,7 @@ We configured multiple vision pipelines within the Limelight, each optimized for
 
 The high frame rate capability (90fps at 1080p, 120fps at 720p) provides smooth, responsive tracking even during rapid robot motion. This high temporal resolution enables our control algorithms to react quickly to changing visual conditions, improving trajectory accuracy and obstacle response times.
 
-<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3cfa107875b63796d2c10564c39bae32a1302cdd/other/IMG_4216.jpeg" width="275" align="left" style="margin-left: 20px;"/>
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3cfa107875b63796d2c10564c39bae32a1302cdd/other/IMG_4216.jpeg" width="300" align="left" style="margin-left: 20px;"/>
 
 Unlike simpler vision sensors, the Limelight 3A outputs comprehensive targeting data including: horizontal and vertical angles to target, bounding box dimensions, target area, skew, and corner coordinates. For AprilTags, it additionally provides 6DOF pose information (X, Y, Z position and roll, pitch, yaw orientation), enabling precise spatial reasoning and positioning.
 
