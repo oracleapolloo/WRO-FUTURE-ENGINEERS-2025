@@ -250,6 +250,8 @@ We configured multiple vision pipelines within the Limelight, each optimized for
 
 The high frame rate capability (90fps at 1080p, 120fps at 720p) provides smooth, responsive tracking even during rapid robot motion. This high temporal resolution enables our control algorithms to react quickly to changing visual conditions, improving trajectory accuracy and obstacle response times.
 
+<img src="https://github.com/oracleapolloo/WRO-FUTURE-ENGINEERS-2025/blob/3cfa107875b63796d2c10564c39bae32a1302cdd/other/IMG_4216.jpeg" width="275" align="left" style="margin-left: 20px;"/>
+
 Unlike simpler vision sensors, the Limelight 3A outputs comprehensive targeting data including: horizontal and vertical angles to target, bounding box dimensions, target area, skew, and corner coordinates. For AprilTags, it additionally provides 6DOF pose information (X, Y, Z position and roll, pitch, yaw orientation), enabling precise spatial reasoning and positioning.
 
 The web-based configuration interface allows us to fine-tune vision pipelines in real-time during testing. We can adjust HSV thresholds, erosion/dilation parameters, contour filtering rules, and neural network confidence levels while observing the processed image stream, dramatically speeding up calibration for different lighting conditions.
